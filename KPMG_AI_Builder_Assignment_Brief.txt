@@ -1,0 +1,273 @@
+AI BUILDER CANDIDATE ASSIGNMENT BRIEF
+KPMG — Assessment exercise for AI Builder Senior Consultant and Manager candidates
+================================================================================
+
+Timebox: Maximum 3 hours total
+Tools:   Candidate's own tools, accounts, and AI tokens
+
+--------------------------------------------------------------------------------
+ASSESSMENT-ONLY ASSURANCE
+--------------------------------------------------------------------------------
+
+This exercise is intended to evaluate your approach, judgment, and builder mindset.
+It is not a request to produce a formal hiring asset for immediate or current-cycle
+use. Nothing submitted as an assignment will be used by KPMG for anything other than
+the candidate's assessment.
+
+--------------------------------------------------------------------------------
+ASSIGNMENT
+--------------------------------------------------------------------------------
+
+KPMG is hiring for an AI Builder role. The role is intentionally broad: strong
+candidates may come from software engineering, UX, MLOps, consulting, research,
+operations, product, or self-taught paths. What matters is the ability to enter an
+ambiguous enterprise context, identify where AI can create practical value, build
+something tangible, and explain tradeoffs clearly.
+
+--------------------------------------------------------------------------------
+THE TASK
+--------------------------------------------------------------------------------
+
+Build something you think would evaluate an AI Builder well. We are giving you a
+starting point, not a fixed problem: help the hiring team identify strong AI Builder
+candidates, using the AI Builder job description as your source material. Part of the
+task is deciding what "evaluate well" actually means, then building to your own
+definition. You choose the direction and the solution format. If you reframe the
+problem, tell us why.
+
+--------------------------------------------------------------------------------
+WHY THE FORMAT IS OPEN
+--------------------------------------------------------------------------------
+
+AI Builders join us from engineering, UX, MLOps, consulting, research, operations,
+product, and self-taught paths. A single fixed task would advantage one background
+and penalize the rest, and would tell us more about prior training than about how a
+candidate thinks. Leaving the format open lets you lean into your strengths and show
+your strongest work in your own domain. We want to see what you are actually good at,
+not watch you perform a skill you do not have. What every strong background shares is
+clear reasoning under ambiguity and constraint, and that is what we are looking for
+across all of them.
+
+--------------------------------------------------------------------------------
+WHAT WE'RE REALLY EVALUATING
+--------------------------------------------------------------------------------
+
+We are not hiring you to build hiring tools. This exercise uses "evaluate an AI
+Builder well" as a deliberately open canvas, because the AI Builder role itself is
+open. You will routinely walk into ambiguous problems with no defined solution and
+decide what is worth building, and often what the real problem even is. The topic is
+the vehicle. What we assess is how you get from a vague prompt to a concrete,
+defensible build: how you scope the problem, what you choose to optimize for, the
+choices you make, and the ones you deliberately do not.
+
+--------------------------------------------------------------------------------
+WHAT YOU CAN BUILD
+--------------------------------------------------------------------------------
+
+- A lightweight product, app, workflow, agent, or automation.
+- An evaluation process, scoring or interview tool, or simulation.
+- A candidate workbench, reviewer workflow, prompt/evaluation framework, or prototype
+  review process.
+- Another practical artifact that helps evaluate AI Builder candidates.
+
+There is no single correct answer. Choose the approach that best shows how you think
+and build.
+
+--------------------------------------------------------------------------------
+REQUIRED SUBMISSION
+--------------------------------------------------------------------------------
+
+Artifact:
+  A working prototype, workflow, process, tool, demo, rubric, simulation, or clearly
+  described system that evaluates AI Builder candidates.
+
+3-minute video:
+  - First 1 minute: Show what you built.
+  - Remaining 2 minutes: Explain your thinking process, how you framed the problem,
+    key choices, tradeoffs, risks, AI use, and what you would improve with more time.
+
+--------------------------------------------------------------------------------
+RULES AND GUARDRAILS
+--------------------------------------------------------------------------------
+
+- Spend no more than 3 hours total, including building, preparing your explanation,
+  and recording the video. No extra credit for more time. The cap is tight on purpose.
+  We want to see what you choose to leave out.
+
+- Use your own tools, accounts, and AI tokens. Free-tier tools are completely fine.
+  We are assessing judgment, not spend. KPMG will not provide tools, tokens,
+  credentials, data, or environments for this exercise.
+
+- Use only synthetic, public, or sample data. Do not use confidential or personal data.
+
+- Make your artifact inspectable with the lightest supporting materials needed:
+  demo link, local files, screenshots, a README, sample outputs, or clear instructions.
+
+- We expect you to use AI tools. This role does not exist without them. But remember:
+  you can outsource thinking, you cannot outsource understanding. We will ask follow-up
+  questions, and you will be expected to answer them. You should be able to disclose
+  how you used AI and which decisions were yours.
+
+--------------------------------------------------------------------------------
+WHAT WE WILL LOOK FOR
+--------------------------------------------------------------------------------
+
+- Understanding of the AI Builder role and the hiring challenge.
+- Ability to turn ambiguity into a concrete direction, including how you frame the problem.
+- A practical, usable artifact grounded in the job context.
+- Evidence of builder mindset: making something real, not only describing an idea.
+- Communication of assumptions, tradeoffs, risks, and next steps.
+- Responsible AI judgment, including fairness, governance, transparency, and candidate
+  experience.
+
+We are not looking for polish for its own sake. We are looking for evidence that you
+can think in systems, build pragmatically, communicate clearly, and balance speed with
+judgment in a complex enterprise environment.
+
+"Like many complex organizations, KPMG has competing priorities, a need for risk,
+security and appropriate governance and a desire to move faster and be innovative in
+the way we operate and deliver to clients - you are expected to consider the needs and
+sometimes competing priorities of multiple stakeholders when considering how you
+approach answering this question."
+
+================================================================================
+APPENDIX A: AI BUILDER JOB DESCRIPTION — SENIOR CONSULTANT
+================================================================================
+
+OVERVIEW
+--------
+
+At KPMG in Canada, our people bring their unique perspectives to Canada's most
+important challenges. Here, you can build momentum that reaches beyond our business,
+develop skills for the future, and take ownership of your career with support at every
+stage.
+
+KPMG in Canada is scaling an internal team of AI Builders who operate as the engine
+embedded in the business — powering the firm's agent builds and transforming our
+business.
+
+This team is for people who sit at the intersection of enterprise operations,
+technology, and design, and who can look at how the firm works today, imagine how it
+should operate with agentic AI, and make that future real through execution.
+
+Objective: Move beyond experimentation and enable real internal adoption of agentic AI,
+redesigning core workflows, decision systems, and operating models using autonomous
+agents that power KPMG's service lines and internal teams.
+
+AI Builders take ownership of the full build lifecycle, working closely with Engineering
+and Internal Transformation teams to move solutions from the KPMG AI Lab into
+scalable, reliable production systems, within a complex and regulated enterprise.
+
+WHAT YOU WILL DO (Senior Consultant)
+-------------------------------------
+
+At the Senior Consultant level, you will be a hands-on AI Builder who takes ownership
+of well-scoped internal problems and contributes to building real, agentic solutions
+end to end. You will work closely with senior builders, practice leads, and internal
+stakeholders on rapid experimentation, prototyping, and Lab-based initiatives.
+
+In this role, you will:
+- Build, test, and harden agents, plugins, skills, and tools using the firm's approved
+  technology stack, working with cloud and engineering teams to deliver
+  production-grade solutions.
+- Own the full build lifecycle: prototype in the AI Lab, productionize through Internal
+  Transformation, and maintain solutions post-deployment.
+- Work with production systems, design evaluations, and handle integrations with
+  enterprise platforms and data sources.
+- Contribute reusable skills, components, and tools back into the shared AI stack so
+  each subsequent build starts further ahead.
+- Operate inside the shared builder pool, deployed against the highest-leverage agent
+  builds across the organization.
+- Be an active member of the AI Lab, contributing demos, reusable assets, and helping
+  build a strong builder community across the firm.
+
+WHAT YOU BRING (Senior Consultant)
+------------------------------------
+
+- Enterprise fluency: understand how organizations operate.
+- Identify real pain points, constraints, and opportunities where agentic AI creates
+  tangible value.
+- Think in workflows, not just models — multi-step processes, human-AI handoffs,
+  decision boundaries, appropriate autonomy levels.
+- Builder mindset: create solutions, not just describe them (code, config, low-code,
+  APIs, orchestration tools).
+- End-to-end ownership: problem definition through to working system.
+- Comfortable in ambiguity; enterprise transformation is rarely linear.
+- Make reasonable assumptions, build quickly, test, learn, iterate.
+- Sound judgment on risk, governance, ethics, and trust — core design constraints,
+  not afterthoughts.
+
+WHERE YOU'LL WORK
+-----------------
+KPMG AI Labs in Toronto, Vancouver, Calgary, or Montreal.
+Embedded in business units: building and testing agentic workflows and prototypes.
+
+WHAT'S IN IT FOR YOU (Senior Consultant)
+-----------------------------------------
+- Work on genuinely new agentic AI use cases at the experimentation and prototyping stage.
+- Exposure to complex, regulated, enterprise-scale internal problems and workflows.
+- Hands-on experience building demos, prototypes, and showcase artifacts.
+- Multidisciplinary environment: builders, researchers, designers, business professionals.
+- AI Lab with secure infrastructure, frontier models, and applied research.
+- Access to frontier models and platforms, including early exposure to leading foundation
+  models, agent frameworks, and enterprise-grade AI tooling.
+
+================================================================================
+APPENDIX B: AI BUILDER JOB DESCRIPTION — MANAGER
+================================================================================
+
+WHAT YOU WILL DO (Manager)
+----------------------------
+
+At the Manager level, you will lead delivery of internal agentic AI initiatives, taking
+ownership of complex problems and guiding work from experimentation through validated
+outcomes. High degree of autonomy; works with Senior Managers, service line leaders,
+and AI Builders.
+
+In this role, you will:
+- Lead design, build, and deployment of production-grade agents, plugins, skills, and
+  tools using the firm's approved AI and engineering stack.
+- Own the full build lifecycle: Lab prototyping, evaluations, productionization,
+  change management, and ongoing product ownership.
+- Partner with cloud platform and engineering teams for code quality, reliability,
+  security, and scalability.
+- Ensure demo readiness: narrative, artifacts, appropriate demo safety and governance.
+- Package validated prototypes into reusable demos, kits, and handoff materials.
+- Balance speed with judgment; embed risk, governance, and trust considerations.
+- Provide delivery and technical leadership to Consultants and Senior Consultants.
+- Capture and share learnings through one-pagers, replication kits, and internal AI
+  literacy artifacts.
+
+WHAT YOU BRING (Manager)
+--------------------------
+
+- Strong enterprise fluency: large organizations, cross-functional, strategy + execution.
+- Identify high-impact opportunities for agentic AI; guide teams on prioritizing use cases.
+- Think in systems and workflows; oversee human-AI collaboration and governance.
+- Lead with builder mindset: concept to execution, tangible + production-ready solutions.
+- End-to-end ownership at scale: problem shaping through deployment and adoption.
+- Comfortable in ambiguity; lead teams through evolving problem spaces.
+- Build, test, iterate with intention; make informed tradeoffs; coach others.
+- Embed responsible AI by design: risk, governance, ethics, trust are core constraints.
+- Lead and develop teams; create environment for builders to do their best work.
+
+WHERE YOU'LL WORK
+-----------------
+KPMG AI Labs in Toronto, Vancouver, Calgary, or Montreal.
+Embedded in business units: building and testing agentic workflows and prototypes.
+
+WHAT'S IN IT FOR YOU (Manager)
+--------------------------------
+- Lead and shape how agentic AI is explored, demonstrated, and validated inside a large
+  complex professional services firm.
+- Ownership of high-impact experimentation and prototyping that influences internal
+  transformation and future delivery models.
+- Multidisciplinary environment: builders, researchers, designers, client service teams,
+  business leaders.
+- AI Lab with secure infrastructure, frontier models, harnesses, and applied research.
+- Develop leadership experience: guide teams, set direction, define how agentic AI
+  capabilities move from concept to something real.
+
+================================================================================
+END OF DOCUMENT
+================================================================================

@@ -1,0 +1,29 @@
+AI Builder - Senior Consultant — KPMG in Canada (Job 32538)
+Information Technology | Toronto, Calgary, Vancouver, Montreal | Full-Time
+Base salary range $80,000 to $100,000 + bonus.
+
+KPMG in Canada is scaling an internal team of AI Builders who operate as the engine embedded in the business, powering the firm's agent builds and transforming the business. This team is for people who sit at the intersection of enterprise operations, technology, and design, who can look at how the firm works today, imagine how it should operate with agentic AI, and make that future real through execution.
+
+Objective: move beyond experimentation and enable real internal adoption of agentic AI, redesigning core workflows, decision systems, and operating models using autonomous agents that power KPMG's service lines and internal teams. AI Builders take ownership of the full build lifecycle, working closely with Engineering and Internal Transformation teams to move solutions from the KPMG AI Lab into scalable, reliable production systems, within a complex and regulated enterprise.
+
+What you will do (Senior Consultant level, hands-on AI Builder):
+- Build, test, and harden agents, plugins, skills, and tools using the firm's approved technology stack, working in deep connection with cloud and engineering teams to deliver production-grade solutions.
+- Own the full build lifecycle: prototype in the AI Lab, productionize through Internal Transformation, and maintain solutions post-deployment with support from engineering and platform teams.
+- Work with production systems, design evaluations, and handle integrations with enterprise platforms and data sources.
+- Contribute reusable skills, components, and tools back into the shared AI stack so each subsequent build starts further ahead.
+- Operate inside the shared builder pool, deployed against the highest-leverage agent builds across the organization.
+- Be an active member of the AI Lab, contributing demos, reusable assets, and helping build a strong builder community across the firm.
+
+What you bring:
+- Builders come from engineering, business, strategy, design, and self-taught technical paths. Designed for early-career professionals ready to build, learn, and grow quickly in a complex and regulated enterprise environment.
+- Enterprise fluency; understand how organizations operate. Identify real pain points, constraints, and opportunities where agentic AI creates tangible value.
+- Think in workflows, not just models; design multi-step processes that account for human-AI handoffs, decision boundaries, and appropriate levels of autonomy.
+- Builder mindset; create solutions through code, configuration, low-code platforms, APIs, or orchestration tools.
+- Take end-to-end ownership, from problem definition to a working system people actually use.
+- Comfortable operating in ambiguity; enterprise transformation is rarely linear. Make reasonable assumptions, build quickly, test, learn, iterate. Apply sound judgment, treating risk, governance, ethics, and trust as core design constraints rather than afterthoughts.
+
+Where/how: based out of KPMG's AI Labs in Toronto, Vancouver, Calgary, or Montreal. Embedded in business units (AI Builder - Internal): supporting internal teams by building and testing agentic workflows and prototypes. Strong English communication required; French an asset in Quebec.
+
+Keywords: agentic AI, autonomous agents, AI agents, agent builds, agent frameworks, plugins, skills, tools, evaluations, evals, integrations, enterprise platforms, data sources, full build lifecycle, prototype, productionize, production-grade systems, LLMs, foundation models, AI orchestration, low-code, APIs, workflow automation, human-AI handoff, decision systems, operating models, AI governance, responsible AI, risk, ethics, trust, enterprise transformation, internal adoption, reusable components, cloud, engineering.
+
+How to apply: resume + optional short cover letter showing how you think, learn, and approach complex problems in client or enterprise environments. Highlight something you've built (a prototype, system, workflow you redesigned, an agent you configured, an automation you created) with a portfolio/GitHub link. Values: Integrity, Excellence, Courage, Together, For Better.

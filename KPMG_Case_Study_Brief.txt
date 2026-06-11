@@ -1,0 +1,104 @@
+From: Gurleen Dhallu, Manager BES, KPMG Management Services LP
+To: Udbhav Kansal
+Subject: KPMG AI Builder Case Study Invitation
+
+---
+
+Hello Udbhav,
+
+Thank you for the momentum you've built with us so far!
+
+As part of the next stage, we're inviting you to complete a case study that reflects the type of work our AI Builders lead at KPMG—bringing together structured thinking, applied AI, and practical execution to solve real business problems.
+
+---
+
+CASE STUDY OVERVIEW
+
+Please find the full brief attached. At a high level, you are being asked to design and build a solution that helps evaluate AI Builder candidates, using the job description as your source context. The problem is intentionally open—how you define and approach it is part of what we are assessing.
+
+---
+
+KEY PARAMETERS (IMPORTANT)
+
+- Timebox: Maximum 3 hours total (including build, write-up, and video)
+- Tools: Use your own tools, accounts, and AI capabilities
+- Data: Use only synthetic, public, or sample data (no confidential data)
+
+---
+
+REQUIRED SUBMISSION
+
+Artifact:
+  A practical output such as a prototype, workflow, evaluation framework, tool, or clearly defined system
+
+3-minute Video:
+  - First 1 minute: Demonstrate what you built
+  - Next 2 minutes: Explain your thinking, approach, tradeoffs, risks, and use of AI
+
+Please ensure your submission is easy to review (e.g., working links, files, README, or instructions as needed).
+
+---
+
+SUBMISSION TIMELINE
+
+Deadline: Thursday, June 11 at 8:00 AM ET
+
+File name format: FirstName_LastName_AIBuilder
+Submission format: PDF
+
+Submission Format (Additional Requirements):
+- Include a link to your 3-minute video (e.g., Google Drive, unlisted YouTube, Loom)
+- Include a link to your demo / artifact (e.g., web app, repository, shared files, or hosted prototype)
+
+IMPORTANT: Ensure all links are fully accessible at time of submission (no restricted permissions).
+
+Submission method: Reply to this email by selecting reply all.
+Direct questions/submissions to: CA-FMAIInnovation@kpmg.ca
+
+---
+
+ASSESSMENT FOCUS
+
+We are primarily evaluating:
+1. Your ability to translate ambiguity into a clear direction
+2. Evidence of a builder mindset (making something real)
+3. Practicality and usability of your solution
+4. Clarity of assumptions, tradeoffs, and risks
+5. Responsible use of AI (including transparency and judgment)
+
+---
+
+USE OF AI
+
+We expect you to use AI tools as part of this exercise. You should be able to clearly articulate how you used AI and which decisions were your own.
+
+---
+
+NEXT STAGE INTERVIEW (~60 minutes)
+
+- 30-minute behavioral discussion
+- 30-minute case study deep dive (walk through submission, present approach, respond to questions)
+
+---
+
+IMPORTANT NOTE
+
+This exercise is intended to evaluate your approach, judgment, and builder mindset. It is not a request to produce a formal hiring asset for immediate or current-cycle use. Nothing submitted as part of this assignment will be used by KPMG for anything other than candidate assessment.
+
+Your submission will be used solely to evaluate your application for the AI Builder role. We will not use, repurpose, or build on your work in any way. By submitting your application, you consent to your portfolio and prototypes being reviewed by our internal hiring team and stored securely for the period of the evaluation, after which all application materials will be permanently deleted.
+
+---
+
+CONTACT
+
+Gurleen Dhallu
+Manager, BES
+KPMG Management Services LP
+Bay Adelaide Centre, 333 Bay Street, Suite 4600
+Toronto, Ontario, M5H 2S5
+T: 647 777 5371
+E: gdhallu@kpmg.ca
+
+---
+
+NOTE: Talent attracts Talent — Employee Referral Program
