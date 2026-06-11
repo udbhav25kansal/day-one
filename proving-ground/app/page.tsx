@@ -28,10 +28,9 @@ export default function Landing() {
         <p className="text-[0.7rem] font-semibold uppercase tracking-[0.35em] text-[var(--ink-faint)]">Day One</p>
 
         <h1 className="font-display mt-5 text-[2.6rem] font-light leading-[1.08] tracking-tight text-[var(--ink)] sm:text-6xl">
-          Where AI&nbsp;Builders are
-          <span className="italic text-[var(--lavender-deep)]"> shown</span>,
+          Trace how an AI&nbsp;Builder
           <br />
-          not screened.
+          <span className="italic text-[var(--lavender-deep)]">thinks</span>.
         </h1>
 
         <p className="mt-7 max-w-xl text-lg leading-relaxed text-[var(--ink-soft)]">
