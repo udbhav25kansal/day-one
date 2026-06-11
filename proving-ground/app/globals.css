@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+/* ─── Serene editorial-pastel theme ─────────────────────────────────────── */
+:root {
+  --cream: #faf6ef;
+  --cream-deep: #f3ece0;
+  --ink: #34302a;
+  --ink-soft: #6b6157;
+  --ink-faint: #9a9085;
+  --line: #e7ddcf;
+  --card: rgba(255, 253, 249, 0.72);
+
+  /* calm pastel accents - also the per-stakeholder identities */
+  --lavender: #b3a6d6; /* partner */
+  --sage: #a3c4a0;     /* senior */
+  --sky: #9ec6dd;      /* it */
+  --peach: #e7b48f;    /* risk */
+  --lavender-deep: #6f5fa3;
+  --sage-deep: #5b7d58;
+  --sky-deep: #4d7d96;
+  --peach-deep: #b9754a;
+}
+
+@theme inline {
+  --color-background: var(--cream);
+  --color-foreground: var(--ink);
+  --font-sans: var(--font-sans-pg);
+  --font-display: var(--font-display);
+}
+
+html {
+  background: var(--cream);
+}
+
+body {
+  position: relative;
+  color: var(--ink);
+  font-family: var(--font-sans-pg), ui-sans-serif, system-ui, sans-serif;
+  background: var(--cream);
+  overflow-x: hidden;
+}
+
+/* drifting pastel gradient-mesh that breathes slowly */
+.pg-aurora {
+  position: fixed;
+  inset: -25%;
+  z-index: -2;
+  pointer-events: none;
+  filter: blur(70px);
+  opacity: 0.85;
+  background:
+    radial-gradient(38% 42% at 18% 22%, rgba(179, 166, 214, 0.55), transparent 70%),
+    radial-gradient(34% 40% at 82% 18%, rgba(158, 198, 221, 0.5), transparent 70%),
+    radial-gradient(42% 46% at 75% 80%, rgba(231, 180, 143, 0.45), transparent 72%),
+    radial-gradient(40% 44% at 25% 82%, rgba(163, 196, 160, 0.45), transparent 72%);
+  animation: drift 26s ease-in-out infinite alternate;
+}
+
+@keyframes drift {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(2%, -2%, 0) scale(1.06); }
+  100% { transform: translate3d(-2%, 1%, 0) scale(1.02); }
+}
+
+/* fine grain for atmosphere */
+.pg-grain {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pg-aurora { animation: none; }
+  .pg-pop, .pg-pop-stagger > * { animation: none !important; opacity: 1 !important; transform: none !important; }
+}
+
+/* ─── pop-in text / element reveals ─────────────────────────────────────── */
+@keyframes popIn {
+  0% { opacity: 0; transform: translateY(14px) scale(0.985); filter: blur(6px); }
+  100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+
+.pg-pop {
+  opacity: 0;
+  animation: popIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* stagger direct children on load */
+.pg-pop-stagger > * {
+  opacity: 0;
+  animation: popIn 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.pg-pop-stagger > *:nth-child(1) { animation-delay: 0.05s; }
+.pg-pop-stagger > *:nth-child(2) { animation-delay: 0.16s; }
+.pg-pop-stagger > *:nth-child(3) { animation-delay: 0.27s; }
+.pg-pop-stagger > *:nth-child(4) { animation-delay: 0.38s; }
+.pg-pop-stagger > *:nth-child(5) { animation-delay: 0.49s; }
+.pg-pop-stagger > *:nth-child(6) { animation-delay: 0.6s; }
+.pg-pop-stagger > *:nth-child(7) { animation-delay: 0.71s; }
+
+/* soft frosted card */
+.pg-card {
+  background: var(--card);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 1px 2px rgba(52, 48, 42, 0.04), 0 18px 48px -24px rgba(52, 48, 42, 0.22);
+}
+
+.font-display { font-family: var(--font-display), Georgia, serif; }
+
+/* print: clean one-pager export (Export PDF -> print to PDF) */
+@media print {
+  .pg-aurora, .pg-grain, .print\:hidden { display: none !important; }
+  html, body { background: #fff !important; }
+  .pg-card { background: #fff !important; box-shadow: none !important; backdrop-filter: none !important; border: 1px solid #e2e2e2 !important; }
+  .pg-pop, .pg-pop-stagger > * { opacity: 1 !important; animation: none !important; }
+  @page { margin: 14mm; }
+}
+
+/* gentle scrollbars */
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-thumb { background: rgba(154, 144, 133, 0.35); border-radius: 9999px; border: 3px solid transparent; background-clip: padding-box; }
+*::-webkit-scrollbar-track { background: transparent; }
