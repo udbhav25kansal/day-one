@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import ReviewerGuide from "@/components/ReviewerGuide";
 
 export default function Landing() {
   const router = useRouter();
@@ -76,6 +77,7 @@ export default function Landing() {
           </div>
         </div>
       </div>
+      <ReviewerGuide page="landing" />
     </main>
   );
 }

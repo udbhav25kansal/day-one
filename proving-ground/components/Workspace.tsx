@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { COMPONENT_LIBRARY } from "@/lib/components-library";
+import ReviewerGuide from "@/components/ReviewerGuide";
 
 // Minimal typings for the browser Web Speech API (not in lib.dom for all targets).
 interface SRResult {
@@ -946,6 +947,8 @@ export default function Workspace({ sessionId, brief, demo = false }: { sessionI
           <iframe srcDoc={prototypeHtml} sandbox="" title="Prototype document" className="min-h-0 w-full flex-1 rounded-2xl border border-[var(--line)] bg-white" />
         </div>
       )}
+
+      <ReviewerGuide page={tab} />
     </main>
   );
 }

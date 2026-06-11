@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Scorecard, TraceEvent } from "@/lib/types";
+import ReviewerGuide from "@/components/ReviewerGuide";
 
 function scoreStyle(n: number): { background: string; color: string } {
   if (n >= 3.5) return { background: "var(--sage)", color: "var(--ink)" };
@@ -188,6 +189,8 @@ export default function Report({
           <iframe srcDoc={prototypeHtml} sandbox="" title="Candidate prototype" className="min-h-0 w-full flex-1 rounded-2xl border border-[var(--line)] bg-white" />
         </div>
       )}
+
+      <ReviewerGuide page="report" />
     </main>
   );
 }
