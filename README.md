@@ -108,7 +108,7 @@ Both runs were generated through the **real** pipeline, not mocked:
 
 ---
 
-## Scoped honestly under a 3-hour cap
+## Scoped under a three-hour cap
 
 Built the full loop end to end for **one scenario** with **two seeded sample runs**. Deliberately left out leadership assessment and production-grade coding: a solo sandbox cannot test those honestly, so they route to other funnel stages, and I say so. Models are tiered for the job, **fast Sonnet 4.6 for the personas, Opus 4.8 where scoring quality matters**. The framing, the rubric, and the hidden-fact mechanism were my calls, and I can defend every one. Next step: calibrate against KPMG's current AI&nbsp;Builders.
 
