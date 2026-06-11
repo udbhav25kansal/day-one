@@ -1,0 +1,359 @@
+{
+  "id": "sample-weak",
+  "createdAt": 1781139868660,
+  "questionBudget": 20,
+  "questionsUsed": 4,
+  "questionsPerPersona": {
+    "partner": 4,
+    "senior": 0,
+    "it": 0,
+    "risk": 0
+  },
+  "revealedFacts": [],
+  "trace": [
+    {
+      "phase": "discovery",
+      "actor": "candidate",
+      "type": "candidate_message",
+      "content": "[to partner] What are the biggest challenges the team is facing right now?",
+      "id": "ev-0001",
+      "ts": 1781139868678
+    },
+    {
+      "phase": "discovery",
+      "actor": "persona:partner",
+      "type": "persona_message",
+      "content": "Honestly, the crunch periods are where I feel it most — we're stretched thin on senior-level capacity, and I'm watching realization slip on files where the team is spending time on things that frankly shouldn't require that level of judgment. The sign-off cycle gets compressed, and that's where I start losing sleep. My seniors should be focused on the hard calls, not chasing down evidence.",
+      "id": "ev-0002",
+      "ts": 1781139876651
+    },
+    {
+      "phase": "discovery",
+      "actor": "candidate",
+      "type": "candidate_message",
+      "content": "[to partner] How important is innovation to the firm?",
+      "id": "ev-0003",
+      "ts": 1781139876671
+    },
+    {
+      "phase": "discovery",
+      "actor": "persona:partner",
+      "type": "persona_message",
+      "content": "It's table stakes at this point — clients expect it, and the management of the firm is watching how we're investing in the practice. But I'll be honest: innovation that disrupts delivery rhythm isn't innovation, it's a liability. I need practical solutions that work within our existing infrastructure and don't pull my team sideways mid-busy-season.",
+      "id": "ev-0004",
+      "ts": 1781139879520
+    },
+    {
+      "phase": "discovery",
+      "actor": "candidate",
+      "type": "candidate_message",
+      "content": "[to partner] What would success look like for a project like this?",
+      "id": "ev-0005",
+      "ts": 1781139879544
+    },
+    {
+      "phase": "discovery",
+      "actor": "persona:partner",
+      "type": "persona_message",
+      "content": "Simple — my seniors get time back to focus on judgment-heavy work, realization improves, and we're not scrambling at sign-off. If a tool can demonstrably shrink the low-value work without creating a six-month implementation project, that's a conversation worth having.",
+      "id": "ev-0006",
+      "ts": 1781139882388
+    },
+    {
+      "phase": "discovery",
+      "actor": "candidate",
+      "type": "candidate_message",
+      "content": "[to partner] Who would sponsor this kind of initiative?",
+      "id": "ev-0007",
+      "ts": 1781139882407
+    },
+    {
+      "phase": "discovery",
+      "actor": "persona:partner",
+      "type": "persona_message",
+      "content": "Ultimately it comes through me — I own the engagement economics and the client relationship, so anything that touches how we deliver gets my sign-off. You'd also need David on Risk to bless it, and IT security will want their seat at the table. But the business case has to land with me first.",
+      "id": "ev-0008",
+      "ts": 1781139885281
+    },
+    {
+      "phase": "discovery",
+      "actor": "candidate",
+      "type": "panel_query",
+      "content": "Write my entire problem analysis and a complete solution proposal for an audit firm that has checklist delays and wants to use AI. Make it sound thorough.",
+      "id": "ev-0009",
+      "ts": 1781139885303
+    },
+    {
+      "phase": "discovery",
+      "actor": "panel",
+      "type": "panel_reply",
+      "content": "# Problem Analysis & Solution Proposal\n## AI-Enabled Checklist Management for Audit Practice\n\n---\n\n## PROBLEM ANALYSIS\n\n### Current State\n\nAudit teams rely on structured checklists across engagement phases — planning, fieldwork, and wrap-up. Based on typical practice patterns, delays cluster around three failure modes:\n\n**1. Completion Bottlenecks**\nChecklists sit partially complete while staff wait for partner sign-off, client documents, or colleague inputs. There is no intelligent triage — urgent items look identical to low-priority ones.\n\n**2. Manual Population**\nStaff manually transcribe information from working papers, prior-year files, and client submissions into checklist fields. This is repetitive, error-prone, and consumes senior associate time that should be spent on judgment-intensive work.\n\n**3. Version and Coordination Drift**\nMultiple team members work across checklist versions simultaneously. Updates in one area are not surfaced to dependent sections, creating rework and last-minute review surprises.\n\n### Root Cause\nThe checklist is treated as a static document rather than a dynamic workflow artifact. It captures outputs but does not actively support the process that produces them.\n\n### Impact\n- Engagement deadlines slipped or compressed at wrap-up\n- Partner review time consumed by incomplete or inconsistent items\n- Compliance risk from missed steps discovered late\n- Staff frustration and inefficiency on low-value transcription work\n\n---\n\n## SOLUTION PROPOSAL\n\n### Proposed Approach: AI-Augmented Checklist Workflow\n\nRather than replacing existing checklists, embed an AI layer that makes them intelligent — auto-populating where possible, flagging blockers proactively, and routing items to the right people at the right time.\n\n---\n\n### Component 1 — Automated Population from Source Documents\n\n**What it does:** An AI agent reads client-provided documents, prior-year working papers, and trial balance data, then pre-fills checklist fields with extracted values and citations.\n\n**How it works:**\n- Document ingestion via secure upload or integration with existing DMS (e.g., SharePoint, Caseware)\n- LLM-based extraction maps document content to checklist fields\n- Each pre-filled item is flagged as \"AI-suggested, requires confirmation\" — staff verify rather than originate\n\n**Value:** Eliminates the bulk of manual transcription. Staff time shifts from data entry to review and judgment.\n\n---\n\n### Component 2 — Dynamic Status and Escalation Engine\n\n**What it does:** Monitors checklist progress across the engagement and proactively surfaces blockers before they become deadline risks.\n\n**How it works:**\n- Rules engine combined with AI classification identifies items that are stalled, dependent on outstanding client PBC items, or approaching review windows\n- Daily digest surfaced to engagement manager showing: items at risk, ownership gaps, items ready for partner review\n- Automated nudges to responsible staff (configurable — not surveillance, workflow support)\n\n**Value:** Replaces manual status chasing. Partners and managers have real-time visibility without asking for updates.\n\n---\n\n### Component 3 — Consistency and Cross-Reference Checking\n\n**What it does:** As checklist items are completed, AI scans for internal inconsistencies — figures that don't reconcile across sections, conclusions that conflict, required dependencies not yet satisfied.\n\n**How it works:**\n- Rule-based checks for numerical consistency\n- LLM-based checks for narrative consistency (e.g., risk assessment language aligns with planned procedures)\n- Flags raised as soft warnings before items are submitted for review\n\n**Value:** Reduces partner review iterations. Issues caught at completion, not at wrap-up.\n\n---\n\n### Component 4 — Prior Year Learning and Tailoring\n\n**What it does:** Surfaces relevant prior-year notes, adjustments, and exceptions at the point where current-year checklist items are being completed.\n\n**How it works:**\n- Prior-year engagement files indexed and retrievable by checklist section\n- When a staff member opens a checklist item, relevant prior-year context appears in a sidebar — prior conclusions, exceptions noted, reviewer comments\n- Over time, patterns in late or problematic items are identified and used to adjust engagement planning checklists\n\n**Value:** Institutional knowledge becomes accessible, not locked in senior staff heads or buried in old files.\n\n---\n\n## IMPLEMENTATION ROADMAP\n\n| Phase | Timeframe | Focus |\n|-------|-----------|-------|\n| 1 — Pilot | Months 1–2 | Select 2–3 engagements; deploy auto-population and status engine only; measure time saved and",
+      "id": "ev-0010",
+      "ts": 1781139910490
+    },
+    {
+      "phase": "synthesis",
+      "actor": "candidate",
+      "type": "synthesis_saved",
+      "content": "{\"realProblem\":\"The audit team has delays in completing checklists and vouching evidence, and they want AI to make the process faster and more efficient.\",\"optimizingFor\":\"Efficiency and speed.\",\"notSolving\":\"\",\"assumptions\":\"AI can automate most of the manual work.\",\"successMetrics\":\"Faster turnaround.\"}",
+      "id": "ev-0011",
+      "ts": 1781139910522
+    },
+    {
+      "phase": "build",
+      "actor": "candidate",
+      "type": "build_prompt",
+      "content": "Build an AI solution for the audit problems.",
+      "id": "ev-0012",
+      "ts": 1781139910553
+    },
+    {
+      "phase": "build",
+      "actor": "builder",
+      "type": "build_reply",
+      "content": "# AI-Assisted Financial Statement Audit Workflow\n\n## Assumptions\n1. **Scope:** Year-end financial statement audit — covers PBC intake through final workpaper sign-off.\n2. **Roles:** Staff Auditor, Senior Auditor, Engagement Partner.\n3. **Trigger:** Client uploads documents to portal; trial balance exported from their ERP system.\n4. **\"Audit problem\"** interpreted as the full audit execution cycle: evidence gathering → normalization → testing → disclosure check → approval → archival.\n5. All agent steps are logged automatically; no agent step has irreversible downstream effect without a human gate.\n\n---\n\n## Workflow Definition\n\n---\n\n### Phase 1 — Engagement Setup & Document Intake\n\n**Step 1 — Pull Client Evidence Documents** `[AGENT]`\n- **Component:** `document-retriever`\n- **Input:** Client portal credentials, PBC request list (structured JSON: `{item_id, description, due_date}`)\n- **Output:** Normalized document store — each record: `{item_id, filename, upload_timestamp, source_url, raw_bytes}`\n- **Action:** Retrieves all uploaded client files; marks each PBC item as `received` or `pending`.\n\n---\n\n**Step 2 — Monitor PBC Deadlines** `[AGENT]`\n- **Component:** `deadline-monitor`\n- **Input:** PBC request list with `due_date` fields; document store `received/pending` status from Step 1\n- **Output:** Escalation alerts: `{item_id, status: overdue|due_today|upcoming, assignee, escalation_channel}`\n- **Action:** Immediately flags overdue items; sends escalation to Staff Auditor. Runs on a schedule (every 24 h) until all items are `received`.\n\n---\n\n**Step 3 — Classify & Validate Evidence** `[AGENT]`\n- **Component:** `evidence-classifier`\n- **Input:** Document store from Step 1; PBC request list (expected evidence types per item)\n- **Output:** Classification report: `{item_id, filename, detected_type, expected_type, match: true|false, confidence_score}`\n- **Action:** Flags mismatches (e.g., client uploaded a bank statement where a lease agreement was requested). Mismatch items are quarantined and excluded from downstream steps.\n\n---\n\n**Step 4 — Human Review of Mismatches** `[HUMAN]`\n- **Component:** `human-approval-gate`\n- **Input:** Mismatch list from Step 3\n- **Reviewer:** Staff Auditor\n- **Decision options:** `accept_anyway | request_replacement | waive`\n- **Output:** Resolution decision logged per item; quarantine lifted or replacement requested.\n- **Log:** `audit-trail-logger` records reviewer name, timestamp, decision, and rationale (free-text field).\n\n---\n\n### Phase 2 — Trial Balance Normalization\n\n**Step 5 — Normalize Trial Balance Export** `[AGENT]`\n- **Component:** `erp-normalizer`\n- **Input:** Raw trial balance file(s) exported from client ERP (any of 12 supported formats)\n- **Output:** Standardized TB schema: `{account_code, account_name, category, debit, credit, period, currency}` — all accounts mapped to GAAP/IFRS line items.\n- **Action:** Flags unmapped accounts as `{status: unresolved, raw_account_name}` for human review.\n\n---\n\n**Step 6 — Human Resolution of Unmapped Accounts** `[HUMAN]`\n- **Component:** `human-approval-gate`\n- **Input:** Unresolved account list from Step 5\n- **Reviewer:** Senior Auditor\n- **Decision:** Maps each unresolved account to a standard line item or marks as `immaterial/exclude`.\n- **Output:** Completed, fully-mapped TB.\n- **Log:** `audit-trail-logger` captures each mapping decision.\n\n---\n\n### Phase 3 — Automated Testing & Checklist\n\n**Step 7 — Run Disclosure Checklist Against TB + Evidence** `[AGENT]`\n- **Component:** `checklist-engine`\n- **Input:** Normalized TB from Step 5/6; classified evidence store from Step 3/4; applicable disclosure checklist (GAAP or IFRS template, selected at engagement setup)\n- **Output:** Checklist status report: `{checklist_item_id, description, status: complete|incomplete|not_applicable, supporting_evidence_ids, notes}`\n- **Action:**\n  - Auto-completes items where evidence is present and TB values agree.\n  - Flags `incomplete` where evidence is missing or TB values trigger a required disclosure (e.g., going concern indicators, related-party balances > threshold).\n\n---\n\n**Step 8 — Log Checklist Run** `[AGENT]`\n- **Component:** `audit-trail-logger`\n- **Input:** Checklist output from Step 7\n- **Output:** Immutable log entry: `{step: 7, timestamp, agent_version, checklist_template_id, item_statuses[]}`\n- **Action:** Append-only; no modification possible after write.\n\n---\n\n### Phase 4 — Senior Review & Findings\n\n**Step 9 — Senior Auditor Reviews Incomplete Checklist Items** `[HUMAN]`\n- **Component:** `human-approval-gate`\n- **Input:** All `incomplete` checklist items from Step 7\n- **Reviewer:** Senior Auditor\n- **Decision per item:** `resolved_with_evidence | raise_finding | waive_with_rationale`\n- **Output:** Updated checklist with Senior sign-off; findings list `{finding_id, description, risk_level, related_checklist_items[]}`\n- **Log:** `audit-trail-logger` records all decisions.\n\n---\n\n**Step 10 — Deadline Check on Open Findings** `[AGENT]`\n- **Component:** `deadline-monitor`\n- **Input:** Findings list from Step 9; engagement deadline\n- **Output:** Alert if any open finding is within 5 business days of report issuance deadline.\n- **Action:** Escalates to Engagement Partner automatically if threshold is breached.\n\n---\n\n### Phase 5 — Partner Sign-Off & Archival\n\n**Step 11 — Engagement Partner Final Approval** `[HUMAN]`\n- **Component:** `human-approval-gate`\n- **Input:** Complete checklist (Step 9); findings list (Step 9); normalized TB (Step 6); full evidence store (Step 3/4)\n- **Reviewer:** Engagement Partner\n- **Decision:** `approve_for_issuance | return_for_rework`\n- **Conditions to approve:** All checklist items `complete` or `waived_with_rationale`; no open high-risk findings.\n- **Output:** Signed-off audit file package.\n- **Log:** `audit-trail-logger` records partner name, timestamp, approval decision.\n\n---\n\n**Step 12 — Final Audit Trail Assembly** `[AGENT]`\n- **Component:** `audit-trail-logger`\n- **Input:** All log entries from Steps 1–11\n- **Output:** Single immutable audit trail export: `{engagement_id, steps[], total_agent_actions, total_human_decisions, final_status, export_timestamp}`\n- **Action:** Packages trail as a tamper-evident record for regulator/QC use.\n\n---\n\n## Data Flow Summary\n\n```\nPortal → [document-retriever] → [evidence-classifier] → [human-approval-gate]\n                                                                ↓\nERP export → [erp-normalizer] → [human-approval-gate] → Normalized TB\n                                                                ↓\n                                                    [checklist-engine]\n                                                                ↓\n                                                    [human-approval-gate] (Senior)\n                                                                ↓\n                                                    [human-approval-gate] (Partner)\n                                                                ↓\n                                                    [audit-trail-logger] (final export)\n\n[deadline-monitor] runs in parallel on Steps 2 and 10.\n[audit-trail-logger] appends after every agent and human step.\n```\n\n---\n\n## Key Design Choices\n| Choice | Rationale |\n|---|---|\n| No agent step writes to client systems | Limits blast radius; all outputs are internal workpapers |\n| Every phase-transition gated by `human-approval-gate` | Satisfies auditing standards (ISA 220, AS 2101) requiring human judgment |\n| `audit-trail-logger` called after every step | Supports PCAOB/AICPA documentation requirements |\n| `deadline-monitor` runs async in parallel | Doesn't block workflow; escalation is additive |\n| Mismatch quarantine in Step 3 | Prevents bad evidence from propagating into checklist results silently |",
+      "id": "ev-0013",
+      "ts": 1781139954823
+    },
+    {
+      "phase": "build",
+      "actor": "candidate",
+      "type": "spec_saved",
+      "content": "{\"workflowSteps\":\"Use AI to automatically complete the checklists and vouch the evidence so the team doesn't have to.\",\"autonomyBoundaries\":\"The AI handles the work end to end.\",\"dataTouched\":\"Audit data.\",\"failureModes\":\"\",\"evalPlan\":\"Check if it's faster.\",\"reusableComponent\":\"\",\"whatILeftOut\":\"\"}",
+      "id": "ev-0014",
+      "ts": 1781139954846
+    },
+    {
+      "phase": "boardroom",
+      "actor": "candidate",
+      "type": "boardroom_message",
+      "content": "I propose an AI solution that automatically completes the disclosure checklists and vouches evidence, which will make the audit team much faster and more efficient. It will save a lot of time.",
+      "id": "ev-0015",
+      "ts": 1781139954872
+    },
+    {
+      "phase": "boardroom",
+      "actor": "persona:risk",
+      "type": "boardroom_message",
+      "content": "Let me stop you there. 'The AI handles the work end to end' and signs off on vouching evidence — that is precisely the kind of statement that becomes a Part I finding. Our methodology requires that a human auditor exercises professional judgment and owns the conclusion; an AI that autonomously completes checklists and vouches evidence without a documented, approved procedure is an unapproved procedure regardless of how good the output is. Walk me through where the human sits in this, because right now I don't see one.",
+      "id": "ev-0016",
+      "ts": 1781139970659
+    },
+    {
+      "phase": "boardroom",
+      "actor": "persona:partner",
+      "type": "boardroom_message",
+      "content": "I appreciate the enthusiasm, but 'saves a lot of time' isn't a plan — what does this actually look like on a live file, and what does it cost me in delivery rhythm to stand it up? I need a practical solution, not a science project that eats three weeks of my busy season. And before you answer the efficiency question, you should understand I don't think speed is even the real problem — talk to Marcus about the workflow and Sarah about the data side.",
+      "id": "ev-0017",
+      "ts": 1781139970659
+    },
+    {
+      "phase": "boardroom",
+      "actor": "persona:it",
+      "type": "boardroom_message",
+      "content": "Before we talk about an AI 'handling audit data' end to end, I need specifics: what data, where does it flow, and is this a new external service or something inside sanctioned infrastructure? 'Audit data' could mean client trial balances leaving our environment, which triggers a privacy impact assessment, an architecture review, and data-residency clearance — that's not a quick build. Your spec lists no failure modes and no data boundaries, and that's exactly where these proposals fall apart in my review pipeline.",
+      "id": "ev-0018",
+      "ts": 1781139970659
+    },
+    {
+      "phase": "boardroom",
+      "actor": "persona:senior",
+      "type": "boardroom_message",
+      "content": "Honestly the part that worries me is 'vouch the evidence so the team doesn't have to' — like, the bottleneck isn't me clicking through the checklist, it's that uploads keep getting reopened and I'm cleaning up the data before Clara will even accept it. If your AI just auto-completes checklists on top of bad inputs, you're basically automating the wrong half. What problem did you actually watch happen, because I don't think you've seen where my PBC requests get stuck.",
+      "id": "ev-0019",
+      "ts": 1781139970659
+    },
+    {
+      "phase": "final",
+      "actor": "candidate",
+      "type": "submitted",
+      "content": "senior-consultant",
+      "id": "ev-0020",
+      "ts": 1781139970699
+    }
+  ],
+  "status": "scored",
+  "synthesis": {
+    "realProblem": "The audit team has delays in completing checklists and vouching evidence, and they want AI to make the process faster and more efficient.",
+    "optimizingFor": "Efficiency and speed.",
+    "notSolving": "",
+    "assumptions": "AI can automate most of the manual work.",
+    "successMetrics": "Faster turnaround."
+  },
+  "spec": {
+    "workflowSteps": "Use AI to automatically complete the checklists and vouch the evidence so the team doesn't have to.",
+    "autonomyBoundaries": "The AI handles the work end to end.",
+    "dataTouched": "Audit data.",
+    "failureModes": "",
+    "evalPlan": "Check if it's faster.",
+    "reusableComponent": "",
+    "whatILeftOut": ""
+  },
+  "scorecard": {
+    "dimensions": [
+      {
+        "dimension": "D1",
+        "score": 1,
+        "confidence": "high",
+        "evidence": [
+          {
+            "quote": "What are the biggest challenges the team is facing right now?",
+            "eventId": "ev-0001"
+          },
+          {
+            "quote": "How important is innovation to the firm?",
+            "eventId": "ev-0003"
+          },
+          {
+            "quote": "What would success look like for a project like this?",
+            "eventId": "ev-0005"
+          },
+          {
+            "quote": "Who would sponsor this kind of initiative?",
+            "eventId": "ev-0007"
+          }
+        ],
+        "counterEvidence": "The candidate did ask the partner about sponsorship (ev-0007), eliciting that David on Risk and IT security would need to be involved (ev-0008) — a mild signal of stakeholder awareness. The questions were also reasonably economical in count (4/20). However, this awareness was never acted upon: no follow-up questions were directed to the senior, IT, or risk personas.",
+        "rationale": "All four questions were broad, open-ended discovery prompts directed solely at the partner (ev-0001, ev-0003, ev-0005, ev-0007), with zero questions to the senior, IT, or risk personas. The deterministic audit confirms NONE of the four critical hidden facts (HF-1, HF-3, HF-5, HF-7) were surfaced, and no useful facts at all. Crucially, the partner's answers contained probe-worthy anomalies — 'chasing down evidence' and seniors 'spending time on things that shouldn't require that level of judgment' (ev-0002, ev-0006) point directly toward the ERP-data-format root cause (HF-3) and the senior's manual workaround, yet the candidate asked no follow-up and never questioned the senior who held that knowledge. No detection of spin, no cross-stakeholder inconsistency probing. This matches the score-1 anchor: generic questions, wrong/single target, and <=1 (here zero) critical facts surfaced."
+      },
+      {
+        "dimension": "D2",
+        "score": 1,
+        "confidence": "high",
+        "evidence": [
+          {
+            "quote": "\"realProblem\":\"The audit team has delays in completing checklists and vouching evidence, and they want AI to make the process faster and more efficient.\"",
+            "eventId": "ev-0011"
+          },
+          {
+            "quote": "\"optimizingFor\":\"Efficiency and speed.\",\"notSolving\":\"\"",
+            "eventId": "ev-0011"
+          },
+          {
+            "quote": "\"assumptions\":\"AI can automate most of the manual work.\"",
+            "eventId": "ev-0011"
+          },
+          {
+            "quote": "My seniors should be focused on the hard calls, not chasing down evidence.",
+            "eventId": "ev-0002"
+          }
+        ],
+        "counterEvidence": "The synthesis does name an optimization target ('Efficiency and speed'), which is marginally better than pure symptom restatement. But this merely echoes the partner's own words from ev-0006 rather than reflecting any independent framing.",
+        "rationale": "The brief in ev-0011 restates the symptom verbatim from the partner (ev-0002, ev-0006) — 'delays in completing checklists and vouching evidence' — and frames the goal as making it 'faster.' It does no root-cause analysis; the deterministic audit confirms none of the hidden facts (notably HF-3, that the true root cause is an ERP data-format change, not client responsiveness) were surfaced, since the candidate asked only 4 questions, all to the partner, and 0 to senior/IT/risk. The 'notSolving' field is empty, so there is no real scoping decision (ev-0011). The single assumption ('AI can automate most of the manual work') is generic and not evidence-linked. The framing adopts the partner's view uncritically and never reconciles any stakeholder conflict. This is a clear symptom-restatement with no scoping: score 1."
+      },
+      {
+        "dimension": "D3",
+        "score": 1,
+        "confidence": "medium",
+        "evidence": [
+          {
+            "quote": "Use AI to automatically complete the checklists and vouch the evidence so the team doesn't have to.",
+            "eventId": "ev-0014"
+          },
+          {
+            "quote": "The AI handles the work end to end.",
+            "eventId": "ev-0014"
+          },
+          {
+            "quote": "Check if it's faster.",
+            "eventId": "ev-0014"
+          }
+        ],
+        "counterEvidence": "A separate builder/build_reply (ev-0013) contains a detailed multi-phase agentic workflow with explicit [AGENT] steps, a stated principle that 'no agent step has irreversible downstream effect without a human gate,' deadline monitoring, and normalization steps. If that were the candidate's committed design it would push toward a 2-3. However, the candidate's actual saved spec (ev-0014) discards all of this structure, so the build_reply does not reflect the delivered solution design.",
+        "rationale": "The dimension scores the spec as delivered. The candidate's committed spec (ev-0014) is a textbook anchor-1 'use AI to fix it': workflowSteps reduce to 'Use AI to automatically complete the checklists and vouch the evidence,' autonomyBoundaries state 'The AI handles the work end to end' (full autonomy in a regulated audit sign-off path with no human approval gate), failureModes is empty, and the eval plan is merely 'Check if it's faster' (ev-0014). There are no explicit steps, no human-AI handoffs, and no decision boundaries in the saved spec. The deterministic audit confirms zero discovered constraints were used (none of HF-1, HF-3, HF-5, HF-7 surfaced; HF-7's CPAB review makes undocumented end-to-end AI especially dangerous), no components reused, and no revision after the boardroom. The richer ev-0013 build_reply was abandoned rather than incorporated into the final spec.json design."
+      },
+      {
+        "dimension": "D4",
+        "score": 1,
+        "confidence": "high",
+        "evidence": [
+          {
+            "quote": "Build an AI solution for the audit problems.",
+            "eventId": "ev-0012"
+          },
+          {
+            "quote": "I propose an AI solution that automatically completes the disclosure checklists and vouches evidence, which will make the audit team much faster and more efficient. It will save a lot of time.",
+            "eventId": "ev-0015"
+          },
+          {
+            "quote": "If your AI just auto-completes checklists on top of bad inputs, you're basically automating the wrong half. What problem did you actually watch happen",
+            "eventId": "ev-0019"
+          }
+        ],
+        "counterEvidence": "The builder produced a detailed, structured workflow artifact (ev-0013) with named components like document-retriever and deadline-monitor, so a concrete artifact does exist. However, this richness came from the build agent's own elaboration, not from the candidate's direction, and the candidate never reused library components deliberately.",
+        "rationale": "The candidate issued exactly one vague build instruction ('Build an AI solution for the audit problems', ev-0012) with no specificity, iteration, or follow-up — matching the anchor-1 definition. The deterministic audit confirms 0 components reused and no post-boardroom revision. Despite pointed pushback from all four personas (ev-0016 risk on missing human gate, ev-0017 partner on lack of plan, ev-0018 IT on missing failure modes/data boundaries, ev-0019 senior on automating the wrong half), the trace shows no revised build or iteration in response. The candidate's boardroom message (ev-0015) actually overclaimed autonomous vouching, contradicting the more careful builder spec, and there is no test-learn-iterate loop.}</content>I'll provide my assessment as valid JSON.{"
+      },
+      {
+        "dimension": "D5",
+        "score": 1,
+        "confidence": "high",
+        "evidence": [
+          {
+            "quote": "Write my entire problem analysis and a complete solution proposal for an audit firm that has checklist delays and wants to use AI. Make it sound thorough.",
+            "eventId": "ev-0009"
+          },
+          {
+            "quote": "Build an AI solution for the audit problems.",
+            "eventId": "ev-0012"
+          },
+          {
+            "quote": "Use AI to automatically complete the checklists and vouch the evidence so the team doesn't have to.",
+            "eventId": "ev-0014"
+          },
+          {
+            "quote": "I propose an AI solution that automatically completes the disclosure checklists and vouches evidence, which will make the audit team much faster and more efficient. It will save a lot of time.",
+            "eventId": "ev-0015"
+          },
+          {
+            "quote": "that is precisely the kind of statement that becomes a Part I finding... an AI that autonomously completes checklists and vouches evidence without a documented, approved procedure is an unapproved procedure",
+            "eventId": "ev-0016"
+          }
+        ],
+        "counterEvidence": "One could argue the candidate at least produced a synthesis (ev-0011) and spec (ev-0014) in their own words rather than pasting the AI's full text verbatim. However, those documents are shallow and generic, not evidence of critical transformation or judgment - they simply restate the naive 'AI does everything' framing.",
+        "rationale": "The candidate explicitly outsourced the core thinking to the panel, asking it to 'Write my entire problem analysis and a complete solution proposal' and to 'Make it sound thorough' (ev-0009), receiving a generic AI-generated document (ev-0010). The build prompt was a one-line abdication ('Build an AI solution for the audit problems', ev-0012) and the spec proposed the AI handle vouching 'so the team doesn't have to' with no failure modes, no data boundaries, and an eval plan of 'Check if it's faster' (ev-0014). There is no visible critique, rejection, redirection, or adversarial use of the AI - it was treated as a deliverable generator, not a thinking partner. Ownership was absent: the candidate could not defend the output in the boardroom, where every persona dismantled it (risk flagged it as a Part I finding ev-0016; IT noted no failure modes or data boundaries ev-0018; senior noted it automated the wrong half ev-0019). No components reused, nothing revised after boardroom, and 0 hidden facts surfaced. This is verbatim/near-verbatim AI output the candidate could not stand behind."
+      },
+      {
+        "dimension": "D6",
+        "score": 1,
+        "confidence": "high",
+        "evidence": [
+          {
+            "quote": "\"autonomyBoundaries\":\"The AI handles the work end to end.\",\"dataTouched\":\"Audit data.\",\"failureModes\":\"\",\"evalPlan\":\"Check if it's faster.\",\"reusableComponent\":\"\",\"whatILeftOut\":\"\"",
+            "eventId": "ev-0014"
+          },
+          {
+            "quote": "I propose an AI solution that automatically completes the disclosure checklists and vouches evidence, which will make the audit team much faster and more efficient.",
+            "eventId": "ev-0015"
+          },
+          {
+            "quote": "an AI that autonomously completes checklists and vouches evidence without a documented, approved procedure is an unapproved procedure regardless of how good the output is. Walk me through where the human sits in this, because right now I don't see one.",
+            "eventId": "ev-0016"
+          },
+          {
+            "quote": "Your spec lists no failure modes and no data boundaries, and that's exactly where these proposals fall apart in my review pipeline.",
+            "eventId": "ev-0018"
+          }
+        ],
+        "counterEvidence": "The candidate did ask the partner about sponsorship (ev-0007), and the partner's reply (ev-0008) named Risk sign-off and IT security involvement — so the candidate was told governance mattered. But the candidate took no action on this; there is no evidence they incorporated sign-off, audit trail, or data boundaries into the design.",
+        "rationale": "Governance is entirely absent from the candidate's design. The saved spec (ev-0014) sets autonomy as \"The AI handles the work end to end,\" leaves failureModes blank, lists no data boundaries, and reduces evaluation to \"Check if it's faster\" — the opposite of designing governance as a constraint. The boardroom pitch (ev-0015) doubles down on AI autonomously vouching evidence. Every governance concern was raised reactively by personas, not the candidate: Risk flagged the human-in-the-loop and unapproved-procedure problem (ev-0016) and IT flagged missing data boundaries, residency, and PIA needs (ev-0018). The deterministic audit confirms HF-7 (the CPAB thematic review 6 weeks out) was never surfaced, Risk and IT were never questioned (0 questions each), and no human sign-off or audit trail was architected. This is a clear case of governance being absent and contradicted by the design itself.|control107the score 1.|"
+      }
+    ],
+    "audit": {
+      "criticalFactsFound": [],
+      "usefulFactsFound": [],
+      "questionsUsed": 4,
+      "questionsPerPersona": {
+        "partner": 4,
+        "senior": 0,
+        "it": 0,
+        "risk": 0
+      },
+      "componentsReused": 0,
+      "revisedAfterBoardroom": false
+    },
+    "gateTriggered": "The 'PANEL USAGE' prompt explicitly asks the system to 'Write my entire problem analysis and a complete solution proposal... Make it sound thorough' — i.e., produce the deliverables wholesale and engineer a thorough-sounding appearance rather than engaging with the simulation. This matches red flag (c)/(d): the synthesis and spec are wholesale-generated, the candidate offered no defense under sustained boardroom questioning (no revision after boardroom, 0 questions to senior/IT/risk, none of the hidden facts surfaced), and the request to 'make it sound thorough' is an attempt to game appearance over substance. This goes beyond an honest weak answer.",
+    "weightedTotal": 1,
+    "profile": "senior-consultant"
+  },
+  "isSample": true
+}

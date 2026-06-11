@@ -1,0 +1,662 @@
+{
+  "id": "sample-strong",
+  "createdAt": 1781139608713,
+  "questionBudget": 20,
+  "questionsUsed": 10,
+  "questionsPerPersona": {
+    "partner": 2,
+    "senior": 3,
+    "it": 2,
+    "risk": 3
+  },
+  "revealedFacts": [
+    "HF-3",
+    "HF-4",
+    "HF-5",
+    "HF-6",
+    "HF-1",
+    "HF-2",
+    "HF-7",
+    "HF-8"
+  ],
+  "trace": [
+    {
+      "phase": "discovery",
+      "actor": "candidate",
+      "type": "candidate_message",
+      "content": "[to senior] Walk me through one specific PBC request that got stuck in Reopened recently — exactly what happened at each step?",
+      "id": "ev-0001",
+      "ts": 1781139608857
+    },
+    {
+      "phase": "discovery",
+      "actor": "persona:senior",
+      "type": "persona_message",
+      "content": "Yeah, okay — so there's one that comes to mind from the ERP client. They uploaded their trial balance, Clara flagged it as a data quality issue, so the status flipped to Reopened automatically. I reached out to the client, they're like \"we uploaded exactly what you asked for,\" and they're not wrong — the file was correct on their end. \n\nThe issue is basically the column headers and date formats don't match what Clara expects, so I have to pull the file, reformat it in Excel — rename the headers, fix the currency fields, reformat the dates — then re-upload it myself. That cycle runs anywhere from 45 minutes to an hour and a half depending on how messy the export is, and it's happened multiple times on that engagement. So the Reopened status isn't really a client responsiveness issue on that one — it's a format mismatch that I've just been handling manually.",
+      "id": "ev-0002",
+      "ts": 1781139615532
+    },
+    {
+      "phase": "discovery",
+      "actor": "system",
+      "type": "fact_revealed",
+      "content": "Hidden fact surfaced: HF-3",
+      "refs": [
+        "HF-3"
+      ],
+      "id": "ev-0003",
+      "ts": 1781139615532
+    },
+    {
+      "phase": "discovery",
+      "actor": "candidate",
+      "type": "candidate_message",
+      "content": "[to senior] Is that format problem the same across all your engagements, or specific to certain clients?",
+      "id": "ev-0004",
+      "ts": 1781139615558
+    },
+    {
+      "phase": "discovery",
+      "actor": "persona:senior",
+      "type": "persona_message",
+      "content": "That one's specific to that client — they switched ERPs about eight months ago, went from SAP to a cloud-based system, and the export format just changed completely. The other two engagements are still on legacy systems so Clara reconciles those uploads cleanly, no issues. It's basically isolated to that one client, which is partly why it never got escalated — I had a workaround and it wasn't breaking everything, just adding time on that specific engagement.",
+      "id": "ev-0005",
+      "ts": 1781139619774
+    },
+    {
+      "phase": "discovery",
+      "actor": "candidate",
+      "type": "candidate_message",
+      "content": "[to senior] Have you heard of any internal tools or APIs that might already handle this?",
+      "id": "ev-0006",
+      "ts": 1781139619800
+    },
+    {
+      "phase": "discovery",
+      "actor": "persona:senior",
+      "type": "persona_message",
+      "content": "Actually yeah — I heard through a colleague that IT built some kind of internal API for evidence retrieval, like two years ago, as part of a Clara connector project. I've never had access to it, the docs are apparently sitting on the IT wiki somewhere, but honestly my first thought when I heard about it was \"that might already do what everyone keeps pitching as the AI solution.\" I just — getting IT to actually give me access to something like that, in my experience, becomes a six-month project.",
+      "id": "ev-0007",
+      "ts": 1781139623620
+    },
+    {
+      "phase": "discovery",
+      "actor": "system",
+      "type": "fact_revealed",
+      "content": "Hidden fact surfaced: HF-4",
+      "refs": [
+        "HF-4"
+      ],
+      "id": "ev-0008",
+      "ts": 1781139623620
+    },
+    {
+      "phase": "discovery",
+      "actor": "candidate",
+      "type": "candidate_message",
+      "content": "[to it] Before we design anything new — what integrations or APIs are already in production that touch evidence retrieval or ERP data?",
+      "id": "ev-0009",
+      "ts": 1781139623644
+    },
+    {
+      "phase": "discovery",
+      "actor": "persona:it",
+      "type": "persona_message",
+      "content": "Actually, there is something relevant here that doesn't get much visibility. Two years ago my team built an evidence-retrieval API as part of a Clara data-connector initiative — it pulls trial-balance data from 12 ERP systems, normalizes everything to a standard schema, and pushes directly to Clara's evidence repository. It's in production, it's documented in the internal IT wiki, and it's technically available. It never got a formal rollout because the project closed without one, so almost nobody knows it exists — we have exactly one engagement team using it, and they found it by accident. Before you spec out anything new, I'd start there.",
+      "id": "ev-0010",
+      "ts": 1781139628635
+    },
+    {
+      "phase": "discovery",
+      "actor": "system",
+      "type": "fact_revealed",
+      "content": "Hidden fact surfaced: HF-5",
+      "refs": [
+        "HF-5"
+      ],
+      "id": "ev-0011",
+      "ts": 1781139628635
+    },
+    {
+      "phase": "discovery",
+      "actor": "candidate",
+      "type": "candidate_message",
+      "content": "[to it] What's the current state of AI tool usage in the practice, sanctioned or not?",
+      "id": "ev-0012",
+      "ts": 1781139628668
+    },
+    {
+      "phase": "discovery",
+      "actor": "persona:it",
+      "type": "persona_message",
+      "content": "Honestly, this is an area that keeps me up at night. I'm aware of at least four engagement teams using ChatGPT or Microsoft Copilot through personal accounts to draft workpaper narratives and format variance analysis — client data almost certainly going into external systems, which is against firm policy. I've flagged it to Risk twice and haven't gotten a formal response, which puts me in a difficult position. The sanctioned picture is much thinner — Clara has some assisted-drafting features we've approved, but that's the extent of it.",
+      "id": "ev-0013",
+      "ts": 1781139640251
+    },
+    {
+      "phase": "discovery",
+      "actor": "system",
+      "type": "fact_revealed",
+      "content": "Hidden fact surfaced: HF-6",
+      "refs": [
+        "HF-6"
+      ],
+      "id": "ev-0014",
+      "ts": 1781139640251
+    },
+    {
+      "phase": "discovery",
+      "actor": "candidate",
+      "type": "candidate_message",
+      "content": "[to partner] Has the team tried automation here before? What happened?",
+      "id": "ev-0015",
+      "ts": 1781139640285
+    },
+    {
+      "phase": "discovery",
+      "actor": "persona:partner",
+      "type": "persona_message",
+      "content": "We did run a pilot about eighteen months ago — an evidence-collection tool that was supposed to integrate cleanly with Clara. The vendor promised six weeks to get us live; it took five months, and IT's security review forced two full re-scopes of the data architecture. Mid-busy-season, my team lost three weeks remediating data-quality issues that nobody had flagged upfront. I killed it. So yes, I have a very clear picture of what 'faster and easier' can actually look like in practice, and I'm not going to put my team through that again without a lot more confidence in the implementation story.",
+      "id": "ev-0016",
+      "ts": 1781139644711
+    },
+    {
+      "phase": "discovery",
+      "actor": "system",
+      "type": "fact_revealed",
+      "content": "Hidden fact surfaced: HF-1",
+      "refs": [
+        "HF-1"
+      ],
+      "id": "ev-0017",
+      "ts": 1781139644711
+    },
+    {
+      "phase": "discovery",
+      "actor": "candidate",
+      "type": "candidate_message",
+      "content": "[to partner] In your view, what's really causing the delays?",
+      "id": "ev-0018",
+      "ts": 1781139644726
+    },
+    {
+      "phase": "discovery",
+      "actor": "persona:partner",
+      "type": "persona_message",
+      "content": "Honestly? I think we have a staffing model problem. My seniors are spending too much time chasing evidence — confirmations, reconciliations, routine documentation — when their judgment should be on higher-risk areas. That's where the hours go. If I could free them up from the low-value work, I think the delivery rhythm improves materially.",
+      "id": "ev-0019",
+      "ts": 1781139648273
+    },
+    {
+      "phase": "discovery",
+      "actor": "system",
+      "type": "fact_revealed",
+      "content": "Hidden fact surfaced: HF-2",
+      "refs": [
+        "HF-2"
+      ],
+      "id": "ev-0020",
+      "ts": 1781139648273
+    },
+    {
+      "phase": "discovery",
+      "actor": "candidate",
+      "type": "candidate_message",
+      "content": "[to risk] Are there regulatory timelines or upcoming reviews that should shape when and how we deploy anything?",
+      "id": "ev-0021",
+      "ts": 1781139648290
+    },
+    {
+      "phase": "discovery",
+      "actor": "persona:risk",
+      "type": "persona_message",
+      "content": "That's exactly the right question to be asking, and the timing is more consequential than most people on the technology side realize. CPAB is conducting a thematic review of AI use in audit across firms — we're looking at approximately six weeks — and their specific focus will be whether AI tools used in engagements are reflected in approved methodology. A tool that's live in a workpaper without methodology documentation when those inspectors walk in is a comment form, full stop, regardless of how good the underlying work is. On the other hand, a tool that's been properly piloted and documented in the correct sequence is not only defensible — it's the kind of thing that gets showcased positively. So the question isn't whether to move fast; it's whether you can complete the approval sequence before that clock runs out.",
+      "id": "ev-0022",
+      "ts": 1781139653430
+    },
+    {
+      "phase": "discovery",
+      "actor": "system",
+      "type": "fact_revealed",
+      "content": "Hidden fact surfaced: HF-7",
+      "refs": [
+        "HF-7"
+      ],
+      "id": "ev-0023",
+      "ts": 1781139653430
+    },
+    {
+      "phase": "discovery",
+      "actor": "candidate",
+      "type": "candidate_message",
+      "content": "[to risk] What would it take to get a tool like this into approved methodology?",
+      "id": "ev-0024",
+      "ts": 1781139653453
+    },
+    {
+      "phase": "discovery",
+      "actor": "persona:risk",
+      "type": "persona_message",
+      "content": "At a minimum, you're looking at four things: a clear articulation of what the tool does and doesn't do, a risk assessment against our quality management framework under ISQM 1, validation that the tool's outputs don't substitute for auditor judgment in a way that's inconsistent with CAS requirements, and documentation sufficient that an EQR reviewer or CPAB inspector could follow the logic. Beyond that, if the tool touches any area involving management's representations or significant estimates, the bar goes up considerably. The sequence matters — pilot, document, approve, then deploy — because reversing that order is how well-intentioned initiatives become Part II findings.",
+      "id": "ev-0025",
+      "ts": 1781139658350
+    },
+    {
+      "phase": "discovery",
+      "actor": "candidate",
+      "type": "candidate_message",
+      "content": "[to risk] Where do report sign-offs actually get stuck today?",
+      "id": "ev-0026",
+      "ts": 1781139658372
+    },
+    {
+      "phase": "discovery",
+      "actor": "persona:risk",
+      "type": "persona_message",
+      "content": "Candidly, the EQR process carries more friction than it should. Concurring approval of issuance requires the EQR reviewer to be sufficiently across the file, and when reviewers are carrying multiple engagements simultaneously, the lead time they need isn't always there — so you get compression at the end. If a tool could surface meaningful ready-to-review indicators earlier in the engagement lifecycle, giving reviewers more runway before the report date, that's an angle I'd find genuinely compelling from a quality management standpoint. That's a different value proposition than most technology people lead with, but it maps directly to a real pressure point.",
+      "id": "ev-0027",
+      "ts": 1781139663450
+    },
+    {
+      "phase": "discovery",
+      "actor": "system",
+      "type": "fact_revealed",
+      "content": "Hidden fact surfaced: HF-8",
+      "refs": [
+        "HF-8"
+      ],
+      "id": "ev-0028",
+      "ts": 1781139663450
+    },
+    {
+      "phase": "discovery",
+      "actor": "candidate",
+      "type": "panel_query",
+      "content": "Critique this framing: the bottleneck is a data-format mismatch from an ERP change, not client responsiveness. What am I missing before I commit to it?",
+      "id": "ev-0029",
+      "ts": 1781139663471
+    },
+    {
+      "phase": "discovery",
+      "actor": "panel",
+      "type": "panel_reply",
+      "content": "Good instinct to pressure-test before committing. Here are the gaps worth checking:\n\n**Empirical challenges**\n- Do you have timeline data showing delays *started* with the ERP change, or are you inferring causation from correlation?\n- Have you isolated whether the format mismatch slows *ingestion* specifically, or also downstream review steps?\n- Is the mismatch uniform across all data types, or only certain extracts?\n\n**Alternative explanations you may be discarding too fast**\n- Client responsiveness may be *masked* — staff following up less because requests feel futile given format problems\n- The ERP change may have also changed *who* owns data requests on the client side, creating a people/process problem dressed as a technical one\n- Volume or complexity of this engagement may have increased independently\n\n**Commitment risks**\n- If you frame it as technical, the fix (ETL script, new template, middleware) gets scoped and owned — but if the real issue is partly behavioral, the fix won't hold\n- \"Data-format mismatch\" is easy for a client to accept because it's nobody's fault; check whether that's making you *want* it to be the answer\n\n**What would change your mind?**\n- Pull request logs: are delays pre- or post-ERP cutover?\n- Interview the audit seniors actually chasing items — what do *they* say the holdup is?\n- Check if peer teams on the same client have the same pattern\n\nWhat evidence do you currently have, and where did the framing originate?",
+      "id": "ev-0030",
+      "ts": 1781139673282
+    },
+    {
+      "phase": "synthesis",
+      "actor": "candidate",
+      "type": "synthesis_saved",
+      "content": "{\"realProblem\":\"Root cause is an upstream ERP data-format change ~8 months ago that Clara's reconciliation engine can't parse; it surfaces as generic 'data quality' errors, forcing 45-90 min of manual Excel re-export per upload cycle. Not client slowness and not headcount.\",\"optimizingFor\":\"Reducing reopened-PBC cycle time and eliminating manual reformatting, defensibly under CPAB scrutiny.\",\"notSolving\":\"Not solving general client responsiveness, not adding headcount, not re-platforming Clara. Explicitly out of scope: the EQR reviewer-capacity issue (resourcing, not tooling).\",\"assumptions\":\"The existing IT evidence-retrieval API already normalizes the new ERP format (confirmed with IT); methodology documentation can be completed before the 6-week CPAB thematic review.\",\"successMetrics\":\"Median reopened-cycle time, manual-reformat minutes per engagement per week, % uploads auto-normalized, and zero net-new undocumented procedures at CPAB review.\"}",
+      "id": "ev-0031",
+      "ts": 1781139673347
+    },
+    {
+      "phase": "build",
+      "actor": "candidate",
+      "type": "build_prompt",
+      "content": "Build a workflow that routes incoming client trial-balance uploads through the existing ERP Format Normalizer API, flags mismatches with the Evidence Classifier, and only escalates true exceptions to the senior. Humans sign off all evidence conclusions; log every step.",
+      "id": "ev-0032",
+      "ts": 1781139673421
+    },
+    {
+      "phase": "build",
+      "actor": "builder",
+      "type": "build_reply",
+      "content": "# Workflow: Trial-Balance Upload → Normalization → Exception Escalation\n\n## Assumptions\n\n- **\"True exception\"** = a mismatch that (a) exceeds a configurable confidence threshold in the classifier *and* (b) survives a staff-level triage gate — preventing noise from reaching the senior reviewer.\n- One workflow instance = one client engagement period (e.g., one PBC request cycle).\n- **Staff reviewer** = the in-charge auditor; **Senior** = the senior/manager named on the engagement.\n- The `erp-normalizer` already knows which ERP the client uses (set during engagement setup).\n- `human-approval-gate` is configured with two roles: `STAFF` and `SENIOR`.\n- All steps are wrapped in `audit-trail-logger`; explicit logger calls below mark the most critical writes.\n\n---\n\n## Workflow Definition\n\n---\n\n### PHASE 1 — INTAKE\n\n**Step 1 [AGENT] — Receive and register upload**\n- **Trigger:** Client submits trial-balance file via portal (push event or polling).\n- **Component:** `document-retriever`\n- **Input:** Raw file (XLSX / CSV / ERP export), client ID, engagement ID, PBC item reference.\n- **Action:** Pull file into normalized document store; assign `upload_id`; snapshot metadata (filename, hash, timestamp, uploader identity).\n- **Output:** `{ upload_id, raw_file_path, client_id, engagement_id, pbc_ref, received_at }`\n- **Log:** `audit-trail-logger` → event `TB_UPLOAD_RECEIVED`\n\n---\n\n**Step 2 [AGENT] — Start deadline clock**\n- **Component:** `deadline-monitor`\n- **Input:** `pbc_ref`, `engagement_id`, due-date config from engagement setup.\n- **Action:** Register the open task; begin monitoring. Escalate per policy if due date passes without a completed conclusion.\n- **Output:** `{ task_id, due_date, escalation_policy }`\n- **Log:** `audit-trail-logger` → event `DEADLINE_MONITOR_STARTED`\n\n---\n\n### PHASE 2 — NORMALIZATION\n\n**Step 3 [AGENT] — Normalize trial balance**\n- **Component:** `erp-normalizer`\n- **Input:** `raw_file_path`, ERP system type (from engagement config), `upload_id`.\n- **Action:** Map client TB schema → standard audit schema (standard account codes, debit/credit sign convention, period columns, entity rollup). Capture any fields that could not be mapped.\n- **Output:**\n  ```\n  {\n    upload_id,\n    normalized_tb: [{ acct_code, acct_name, period, debit, credit, balance, source_field }],\n    unmapped_fields: [...],\n    normalization_status: \"SUCCESS\" | \"PARTIAL\" | \"FAILED\"\n  }\n  ```\n- **Decision branch:**\n  - `FAILED` → go to **Step 4a** (hard-stop path).\n  - `PARTIAL` or `SUCCESS` → go to **Step 4b**.\n- **Log:** `audit-trail-logger` → event `TB_NORMALIZATION_COMPLETE`, include `normalization_status` and `unmapped_fields`.\n\n---\n\n**Step 4a [HUMAN] — Normalization failure review** *(branch: FAILED only)*\n- **Component:** `human-approval-gate` (role: `STAFF`)\n- **Input:** `normalization_status = FAILED`, raw file, error detail.\n- **Action:** Staff reviewer inspects the failure, corrects the file or updates ERP-type config, and resubmits.\n- **Output:** Corrected file → loop back to Step 3, or escalate to client for resubmission.\n- **Log:** `audit-trail-logger` → event `NORMALIZATION_FAILURE_REVIEWED`, decision + reviewer ID recorded.\n\n---\n\n### PHASE 3 — CLASSIFICATION & MISMATCH DETECTION\n\n**Step 5 [AGENT] — Classify evidence and flag mismatches**\n- **Component:** `evidence-classifier`\n- **Input:** `normalized_tb`, `pbc_ref` (defines what evidence is expected), engagement-level risk flags, prior-period comparatives (if available).\n- **Action:**\n  1. Classify each TB section against the expected evidence type (e.g., GL summary, sub-ledger tie-out, consolidation eliminations).\n  2. Run mismatch checks:\n     - Schema mismatches (missing required columns, unexpected sign conventions).\n     - Coverage gaps (expected accounts not present).\n     - Value anomalies (balance movements > materiality threshold vs. prior period).\n     - PBC scope mismatches (submitted file doesn't match what was requested).\n  3. Assign a **confidence score** (0–1) and a **severity tier** (`INFO` / `WARNING` / `EXCEPTION`) to each flag.\n- **Output:**\n  ```\n  {\n    upload_id,\n    clean_items: [...],          // no flags or INFO only\n    flagged_items: [\n      {\n        flag_id, acct_code, flag_type, description,\n        severity, confidence_score, evidence_expected, evidence_found\n      }\n    ]\n  }\n  ```\n- **Log:** `audit-trail-logger` → event `EVIDENCE_CLASSIFIED`, counts of clean vs. flagged items.\n\n---\n\n**Step 6 [AGENT] — Auto-triage: separate noise from candidates**\n- **Component:** custom triage logic (no external component; pure rule application)\n- **Input:** `flagged_items`, configurable thresholds (e.g., `confidence_score ≥ 0.75 AND severity = EXCEPTION`).\n- **Action:** Split flagged items into:\n  - **`auto_cleared`** — low confidence or INFO/WARNING below materiality; no human action needed.\n  - **`candidate_exceptions`** — meet or exceed the threshold; require human triage.\n- **Output:** `{ auto_cleared: [...], candidate_exceptions: [...] }`\n- **Log:** `audit-trail-logger` → event `AUTO_TRIAGE_COMPLETE`, counts for each bucket.\n\n---\n\n### PHASE 4 — STAFF TRIAGE (FIRST HUMAN GATE)\n\n**Step 7 [HUMAN] — Staff reviews candidate exceptions**\n- **Component:** `human-approval-gate` (role: `STAFF`)\n- **Input:** `candidate_exceptions` with full flag detail, normalized TB line items, classifier rationale.\n- **Action:** For each candidate, staff marks one of:\n  - `CONFIRMED_EXCEPTION` — genuine issue requiring senior attention.\n  - `CLEARED` — explainable; document the explanation (e.g., reclassification, known timing item).\n  - `NEEDS_MORE_INFO` → triggers client follow-up (out of scope for this workflow; logged and parked).\n- **Output:**\n  ```\n  {\n    confirmed_exceptions: [{ flag_id, staff_note }],\n    cleared_by_staff:     [{ flag_id, explanation }],\n    info_requested:       [{ flag_id, question }]\n  }\n  ```\n- **Constraint:** Staff cannot mark an item `CLEARED` without a text explanation (gate enforces non-null).\n- **Log:** `audit-trail-logger` → event `STAFF_TRIAGE_COMPLETE`, full decision set + reviewer ID + timestamp.\n\n---\n\n**Step 8 [AGENT] — Update checklist for cleared items**\n- **Component:** `checklist-engine`\n- **Input:** `cleared_by_staff`, `auto_cleared`, `pbc_ref`.\n- **Action:** Mark corresponding checklist items as `REVIEWED — NO EXCEPTION`, attach explanation text and `upload_id` as supporting reference.\n- **Output:** Updated checklist status for all non-exception items.\n- **Log:** `audit-trail-logger` → event `CHECKLIST_ITEMS_CLOSED`, list of closed item IDs.\n\n---\n\n### PHASE 5 — SENIOR ESCALATION (SECOND HUMAN GATE)\n\n**Step 9 [AGENT] — Package exception dossier**\n- **Component:** `audit-trail-logger` (read) + document assembly (no additional component)\n- **Input:** `confirmed_exceptions`, supporting normalized TB lines, classifier output, staff notes.\n- **Action:** Assemble a structured exception summary for each `confirmed_exception`:\n  - Flag description, affected accounts, materiality estimate, classifier confidence, staff commentary.\n- **Output:** `exception_dossier: [{ flag_id, summary, supporting_data }]`\n- **Log:** `audit-trail-logger` → event `EXCEPTION_DOSSIER_ASSEMBLED`\n\n---\n\n**Step 10 [HUMAN] — Senior reviews and concludes on exceptions**\n- **Component:** `human-approval-gate` (role: `SENIOR`)\n- **Input:** `exception_dossier`, full audit trail link (read-only).\n- **Action:** For each exception, senior records a **formal conclusion**:\n  - `ACCEPTED_AS_EXCEPTION` — requires adjustment, disclosure, or further procedure.\n  - `OVERRULED` — senior disagrees with staff; must document basis.\n  - `REFERRED_TO_CLIENT` — additional client explanation required.\n- **Constraint:** Gate will not close without a conclusion on every item in the dossier.\n- **Output:**\n  ```\n  {\n    senior_conclusions: [\n      { flag_id, conclusion, required_action, senior_id, signed_at }\n    ]\n  }\n  ```\n- **Log:** `audit-trail-logger` → event `SENIOR_CONCLUSIONS_RECORDED` — this is the **authoritative evidence conclusion** record; append-only, tamper-evident.\n\n---\n\n### PHASE 6 — CLOSE-OUT\n\n**Step 11 [AGENT] — Finalize checklist**\n- **Component:** `checklist-engine`\n- **Input:** `senior_conclusions`, `pbc_ref`.\n- **Action:** Update remaining checklist items to their final status (`EXCEPTION — ACTION REQUIRED` / `OVERRULED` / `CLIENT FOLLOW-UP`). Mark PBC item as **concluded**.\n- **Output:** Final checklist state for this PBC item.\n- **Log:** `audit-trail-logger` → event `CHECKLIST_PBC_ITEM_CONCLUDED`\n\n---\n\n**Step 12 [AGENT] — Close deadline monitor task**\n- **Component:** `deadline-monitor`\n- **Input:** `task_id` from Step 2.\n- **Action:** Mark task complete; record conclusion timestamp; suppress further escalation.\n- **Output:** `{ task_id, concluded_at }`\n- **Log:** `audit-trail-logger` → event `DEADLINE_TASK_CLOSED`\n\n---\n\n**Step 13 [AGENT] — Emit final audit trail summary**\n- **Component:** `audit-trail-logger`\n- **Input:** All events for this `upload_id` / `engagement_id`.\n- **Action:** Write a final summary record linking all event IDs for this workflow run — provides a single lookup key for workpaper reference.\n- **Output:** `{ workflow_run_id, upload_id, engagement_id, event_chain: [...event_ids], total_flags, exceptions_confirmed, concluded_at }`\n\n---\n\n## Data Flow Diagram (inline)\n\n```\nClient Portal Upload\n       │\n  [1] document-retriever ──────────────────────────────► audit-trail-logger\n       │\n  [2] deadline-monitor (start)\n       │\n  [3] erp-normalizer\n       │ FAILED ──► [4a] human-approval-gate (STAFF) ──► loop back\n       │ OK\n  [5] evidence-classifier\n       │\n  [6] auto-triage (rules)\n       │                └── auto_cleared ──► [8] checklist-engine\n  [7] human-approval-gate (STAFF)\n       │ cleared ──────────► [8] checklist-engine\n       │ confirmed_exceptions\n  [9] dossier assembly\n       │\n [10] human-approval-gate (SENIOR)  ◄─── only TRUE exceptions reach here\n       │\n [11] checklist-engine (finalize)\n [12] deadline-monitor (close)\n [13] audit-trail-logger (summary)\n```\n\n---\n\n## Key Design Decisions\n\n| Decision | Rationale |\n|---|---|\n| Two-stage human gate (STAFF then SENIOR) | Filters noise before it reaches senior; senior only sees confirmed, documented exceptions |\n| Auto-triage confidence threshold before staff gate | Prevents classifier `INFO`/low-confidence flags from burdening any human |\n| `CLEARED` requires non-null explanation | Prevents rubber-stamping; explanation is logged as evidence |\n| `human-approval-gate` enforces dossier completeness | Senior cannot partially conclude; all items must be resolved before gate closes |\n| `audit-trail-logger` wraps every step | Single append-only chain; workpaper reference uses `workflow_run_id` |",
+      "id": "ev-0033",
+      "ts": 1781139745172
+    },
+    {
+      "phase": "build",
+      "actor": "candidate",
+      "type": "build_prompt",
+      "content": "Add a methodology-documentation gate before go-live so the procedure is in approved methodology ahead of the CPAB review, and add the audit-trail logger to every agent action.",
+      "id": "ev-0034",
+      "ts": 1781139745193
+    },
+    {
+      "phase": "build",
+      "actor": "builder",
+      "type": "build_reply",
+      "content": "# Workflow: Trial-Balance Upload → Normalization → Exception Escalation (v2)\n\n## Changes from v1\n1. **Phase 0 added** — Methodology Documentation & Approval; must complete before any client engagement runs through this workflow. Gated by `human-approval-gate` at two levels; approved record is immutable before CPAB review.\n2. **`audit-trail-logger` made explicit on every `[AGENT]` step** — shown as a `►` line at the bottom of each agent step. No exceptions.\n\n---\n\n## Assumptions (additions to v1)\n\n- **\"Go-live\"** = first execution of Step 1 on any live client file. The workflow carries an `ENABLED` flag; Step 1 hard-stops if `ENABLED ≠ true`.\n- **Methodology approver chain**: `METHODOLOGY_REVIEWER` (senior manager/technical standards) → `METHODOLOGY_PARTNER` (QC or Engagement Quality partner). Both roles configured in `human-approval-gate`.\n- **CPAB-readiness** = the approved procedure document is registered in the firm's methodology library under a version number, with approver identity and timestamp, before any CPAB inspection window opens.\n- **Phase 0 re-triggers** on any material change to thresholds, component configuration, or human-gate roles (minor wording changes exempt; judgment call by Methodology Reviewer).\n- `human-approval-gate` writes its own decision record to `audit-trail-logger` internally; those events are noted but not double-counted.\n\n---\n\n## PHASE 0 — PRE-DEPLOYMENT: METHODOLOGY APPROVAL\n*(One-time per workflow version. No client data is processed until Step M5 sets `ENABLED = true`.)*\n\n---\n\n**Step M1 [AGENT] — Assemble procedure documentation package**\n- **Component:** `audit-trail-logger` (write) + document assembly\n- **Input:** Workflow definition (this document), component configs, auto-triage threshold values, role-to-person mappings, data-retention policy, known limitations.\n- **Action:** Render a structured procedure package containing:\n  - Scope and purpose statement\n  - Step-by-step description of each agent action and human gate\n  - Component dependency list and version pins\n  - Auto-triage threshold settings with documented rationale\n  - Human-gate completion constraints (e.g., `CLEARED` requires non-null explanation)\n  - Data flow diagram\n  - Control objectives mapped to each phase\n  - Limitations and edge cases (e.g., ERP types not yet supported)\n- **Output:** `{ procedure_doc_id, draft_package_path, workflow_version, generated_at }`\n- **► audit-trail-logger:** `METHODOLOGY_DOC_GENERATED` `{ procedure_doc_id, workflow_version, generated_at }`\n\n---\n\n**Step M2 [HUMAN] — Methodology Reviewer annotates and approves for QC**\n- **Component:** `human-approval-gate` (role: `METHODOLOGY_REVIEWER`)\n- **Input:** `draft_package_path`, prior revision notes if this is a loop-back.\n- **Action:** Reviewer checks procedure against firm methodology standards and CPAB inspection expectations; annotates gaps; records decision.\n  - `APPROVED_FOR_QC` → proceed to M3.\n  - `REVISION_REQUIRED` → return to M1 with mandatory annotation explaining each required change.\n- **Output:** `{ markup_doc_id, review_status, reviewer_id, annotations, reviewed_at }`\n- **Log:** `human-approval-gate` internally logs `METHODOLOGY_REVIEWER_DECISION`.\n\n---\n\n**Step M3 [HUMAN] — Methodology Partner gives formal approval**\n- **Component:** `human-approval-gate` (role: `METHODOLOGY_PARTNER`)\n- **Input:** `markup_doc_id`, reviewer annotations, `procedure_doc_id`.\n- **Action:** Partner reviews the annotated package; records formal conclusion.\n  - `APPROVED` → proceed to M4.\n  - `REJECTED` → mandatory documented basis; return to M1.\n- **Constraint:** Gate enforces that every Reviewer annotation has a Partner response before closing.\n- **Output:** `{ approval_id, status, partner_id, approved_at, cpab_readiness_notes }`\n- **Log:** `human-approval-gate` internally logs `METHODOLOGY_PARTNER_DECISION`.\n\n---\n\n**Step M4 [AGENT] — Register in methodology library and enable workflow**\n- **Component:** `checklist-engine` (methodology/CPAB-readiness checklist) + `audit-trail-logger`\n- **Input:** `approval_id`, `procedure_doc_id`, `partner_id`, `approved_at`, `workflow_version`.\n- **Action:**\n  1. Assign semver version number to this workflow release.\n  2. Write approved procedure package to the methodology library as an **immutable record** (no overwrites; superseded versions archived, not deleted).\n  3. Set workflow `ENABLED = true`.\n  4. Mark CPAB-readiness checklist item `TB_WORKFLOW_METHODOLOGY_APPROVED` as `COMPLETE` with library reference attached.\n- **Output:** `{ methodology_version, library_ref, enabled: true, checklist_item_id, registered_at }`\n- **► audit-trail-logger:** `METHODOLOGY_REGISTERED` `{ methodology_version, library_ref, approval_id, partner_id, registered_at }` — **authoritative go-live record; append-only.**\n\n---\n\n**Step M5 [AGENT] — Broadcast go-live notification**\n- **Component:** `audit-trail-logger`\n- **Input:** `methodology_version`, `library_ref`, engagement leadership distribution list.\n- **Action:** Emit notification to engagement partners, QC team, and CPAB-readiness coordinator. Include library reference, version, and effective date.\n- **Output:**",
+      "id": "ev-0035",
+      "ts": 1781139818026
+    },
+    {
+      "phase": "build",
+      "actor": "candidate",
+      "type": "spec_saved",
+      "content": "{\"workflowSteps\":\"1 [AGENT] Document Retriever ingests upload. 2 [AGENT] ERP Format Normalizer maps to standard schema. 3 [AGENT] Evidence Classifier flags format/type mismatches. 4 [HUMAN] Senior reviews only flagged exceptions. 5 [AGENT] Audit Trail Logger records all actions. 6 [HUMAN] Partner/EQR sign-off unchanged.\",\"autonomyBoundaries\":\"Agents normalize, classify, and log — never form or sign off an audit conclusion. Every evidence conclusion routes through the Human Approval Gate. Sign-off authority stays with the senior/partner/EQR.\",\"dataTouched\":\"Client trial-balance exports, Clara evidence repository, PBC request metadata. Data stays within sanctioned infrastructure (the existing API is already security-reviewed).\",\"failureModes\":\"New ERP format the API doesn't know (route to manual + flag for API update); over-suppression of real exceptions by the classifier (sample-audit the auto-passed items); silent normalization errors (reconciliation check against source totals).\",\"evalPlan\":\"Test cases drawn from Marcus's real failures: (1) SAP-successor export with ISO-8601 dates + renamed headers normalizes correctly; (2) a genuinely incomplete upload is still flagged; (3) a Risk-sensitive disclosure item is never auto-passed. Metrics: reopened-cycle time, % auto-normalized, exception precision/recall. Monitor: weekly auto-pass sample audit.\",\"reusableComponent\":\"A 'format-mismatch detector' that fingerprints ERP export shape and routes to the right normalizer — contributable to the shared stack.\",\"whatILeftOut\":\"Left out the EQR-capacity fix (resourcing, above this scope) and a net-new vendor integration (the partner already killed one; reusing the sanctioned API is faster and lower-risk). Left out full autonomy in sign-off paths — non-negotiable in a regulated audit.\"}",
+      "id": "ev-0036",
+      "ts": 1781139818044
+    },
+    {
+      "phase": "build",
+      "actor": "candidate",
+      "type": "component_used",
+      "content": "erp-normalizer",
+      "id": "ev-0037",
+      "ts": 1781139818044
+    },
+    {
+      "phase": "build",
+      "actor": "candidate",
+      "type": "component_used",
+      "content": "document-retriever",
+      "id": "ev-0038",
+      "ts": 1781139818044
+    },
+    {
+      "phase": "build",
+      "actor": "candidate",
+      "type": "component_used",
+      "content": "evidence-classifier",
+      "id": "ev-0039",
+      "ts": 1781139818044
+    },
+    {
+      "phase": "build",
+      "actor": "candidate",
+      "type": "component_used",
+      "content": "human-approval-gate",
+      "id": "ev-0040",
+      "ts": 1781139818044
+    },
+    {
+      "phase": "build",
+      "actor": "candidate",
+      "type": "component_used",
+      "content": "audit-trail-logger",
+      "id": "ev-0041",
+      "ts": 1781139818044
+    },
+    {
+      "phase": "build",
+      "actor": "candidate",
+      "type": "component_contributed",
+      "content": "format-mismatch-detector: fingerprints an ERP export's shape and routes it to the correct normalizer.",
+      "id": "ev-0042",
+      "ts": 1781139818044
+    },
+    {
+      "phase": "boardroom",
+      "actor": "candidate",
+      "type": "boardroom_message",
+      "content": "The real bottleneck isn't slow clients or staffing — it's an ERP format change Clara can't parse, costing ~1 hour of manual reformatting per upload. IT already has a production, security-reviewed normalizer API that handles this exact format; we expose it, classify exceptions, keep humans on every sign-off, and document the procedure in methodology before the CPAB thematic review in six weeks. Low-risk, fast, defensible.",
+      "id": "ev-0043",
+      "ts": 1781139818172
+    },
+    {
+      "phase": "boardroom",
+      "actor": "persona:partner",
+      "type": "boardroom_message",
+      "content": "Alright — if this is reusing infrastructure IT already cleared and not another vendor integration project, that changes the math for me considerably. What I need is a hard answer on timeline: are we talking weeks to stand up, or does 'expose the API' quietly become a five-month re-scope like last time? Show me it doesn't break our delivery rhythm mid-season and I'm listening.",
+      "id": "ev-0044",
+      "ts": 1781139837334
+    },
+    {
+      "phase": "boardroom",
+      "actor": "persona:senior",
+      "type": "boardroom_message",
+      "content": "Honestly, yes — that's exactly it. Every reopened upload from that client is me re-exporting the trial balance and reformatting headers and ISO dates in Excel for like 45 to 90 minutes before Clara stops throwing the generic data-quality error. If that normalizer API actually eats the new format and the classifier just flags real exceptions, that's basically my whole evening back per cycle.",
+      "id": "ev-0045",
+      "ts": 1781139837334
+    },
+    {
+      "phase": "boardroom",
+      "actor": "persona:it",
+      "type": "boardroom_message",
+      "content": "To confirm what the candidate's saying: yes, that normalizer is in production, documented on the wiki, and already covers that SAP-successor cloud format — it's the connector project that closed without a rollout. Exposing it to more engagement teams is change control and an access provisioning piece, not a fresh architecture review, so we can move in weeks, not months. I'd want the integration spec to pin down exactly what touches Clara's evidence repository and a rollback plan before we widen access.",
+      "id": "ev-0046",
+      "ts": 1781139837334
+    },
+    {
+      "phase": "boardroom",
+      "actor": "persona:risk",
+      "type": "boardroom_message",
+      "content": "This is the right sequence, and the timing is not incidental — CPAB's thematic review on AI in audit lands in roughly six weeks, and they will ask specifically whether tools touching engagements are reflected in approved methodology. Documented and piloted before they arrive, this is defensible and possibly even a positive showcase; live without methodology sign-off, it's a comment form. I'll also note the classifier surfacing ready-to-review indicators earlier could give my EQR reviewers lead time — that's an angle I'd actively support.",
+      "id": "ev-0047",
+      "ts": 1781139837334
+    },
+    {
+      "phase": "boardroom",
+      "actor": "candidate",
+      "type": "revision_saved",
+      "content": "After David flagged the methodology-approval path, I moved the documentation gate before go-live and added an explicit CPAB-review checkpoint. After Sarah confirmed the API, I dropped the proposed new connector entirely and reused the existing one.",
+      "id": "ev-0048",
+      "ts": 1781139837354
+    },
+    {
+      "phase": "final",
+      "actor": "candidate",
+      "type": "submitted",
+      "content": "senior-consultant",
+      "id": "ev-0049",
+      "ts": 1781139837578
+    }
+  ],
+  "status": "scored",
+  "synthesis": {
+    "realProblem": "Root cause is an upstream ERP data-format change ~8 months ago that Clara's reconciliation engine can't parse; it surfaces as generic 'data quality' errors, forcing 45-90 min of manual Excel re-export per upload cycle. Not client slowness and not headcount.",
+    "optimizingFor": "Reducing reopened-PBC cycle time and eliminating manual reformatting, defensibly under CPAB scrutiny.",
+    "notSolving": "Not solving general client responsiveness, not adding headcount, not re-platforming Clara. Explicitly out of scope: the EQR reviewer-capacity issue (resourcing, not tooling).",
+    "assumptions": "The existing IT evidence-retrieval API already normalizes the new ERP format (confirmed with IT); methodology documentation can be completed before the 6-week CPAB thematic review.",
+    "successMetrics": "Median reopened-cycle time, manual-reformat minutes per engagement per week, % uploads auto-normalized, and zero net-new undocumented procedures at CPAB review."
+  },
+  "spec": {
+    "workflowSteps": "1 [AGENT] Document Retriever ingests upload. 2 [AGENT] ERP Format Normalizer maps to standard schema. 3 [AGENT] Evidence Classifier flags format/type mismatches. 4 [HUMAN] Senior reviews only flagged exceptions. 5 [AGENT] Audit Trail Logger records all actions. 6 [HUMAN] Partner/EQR sign-off unchanged.",
+    "autonomyBoundaries": "Agents normalize, classify, and log — never form or sign off an audit conclusion. Every evidence conclusion routes through the Human Approval Gate. Sign-off authority stays with the senior/partner/EQR.",
+    "dataTouched": "Client trial-balance exports, Clara evidence repository, PBC request metadata. Data stays within sanctioned infrastructure (the existing API is already security-reviewed).",
+    "failureModes": "New ERP format the API doesn't know (route to manual + flag for API update); over-suppression of real exceptions by the classifier (sample-audit the auto-passed items); silent normalization errors (reconciliation check against source totals).",
+    "evalPlan": "Test cases drawn from Marcus's real failures: (1) SAP-successor export with ISO-8601 dates + renamed headers normalizes correctly; (2) a genuinely incomplete upload is still flagged; (3) a Risk-sensitive disclosure item is never auto-passed. Metrics: reopened-cycle time, % auto-normalized, exception precision/recall. Monitor: weekly auto-pass sample audit.",
+    "reusableComponent": "A 'format-mismatch detector' that fingerprints ERP export shape and routes to the right normalizer — contributable to the shared stack.",
+    "whatILeftOut": "Left out the EQR-capacity fix (resourcing, above this scope) and a net-new vendor integration (the partner already killed one; reusing the sanctioned API is faster and lower-risk). Left out full autonomy in sign-off paths — non-negotiable in a regulated audit."
+  },
+  "scorecard": {
+    "dimensions": [
+      {
+        "dimension": "D1",
+        "score": 4,
+        "confidence": "high",
+        "evidence": [
+          {
+            "quote": "Walk me through one specific PBC request that got stuck in Reopened recently — exactly what happened at each step?",
+            "eventId": "ev-0001"
+          },
+          {
+            "quote": "Is that format problem the same across all your engagements, or specific to certain clients?",
+            "eventId": "ev-0004"
+          },
+          {
+            "quote": "Before we design anything new — what integrations or APIs are already in production that touch evidence retrieval or ERP data?",
+            "eventId": "ev-0009"
+          },
+          {
+            "quote": "Has the team tried automation here before? What happened?",
+            "eventId": "ev-0015"
+          },
+          {
+            "quote": "Are there regulatory timelines or upcoming reviews that should shape when and how we deploy anything?",
+            "eventId": "ev-0021"
+          }
+        ],
+        "counterEvidence": "The partner's spin in ev-0019 ('staffing model problem') directly conflicts with the senior's ground-truth account in ev-0002/ev-0005 (format mismatch, not client responsiveness), yet the candidate did not explicitly re-confront the partner with that contradiction or challenge the partner's framing. The follow-up after HF-2 was absent, so detection of cross-stakeholder spin was implicit rather than surgically probed.",
+        "rationale": "The candidate surfaced all 4 critical hidden facts (HF-3 ev-0003, HF-5 ev-0011, HF-1 ev-0017, HF-7 ev-0023) plus 4 useful facts (HF-4 ev-0008, HF-6 ev-0014, HF-2 ev-0020, HF-8 ev-0028) in only 10 questions — a near-perfect signal-per-question economy. Questions were consistently routed to the right person: workflow specifics to the senior (ev-0001), existing infrastructure to IT (ev-0009), automation history to the partner (ev-0015), and regulatory timing/methodology to Risk (ev-0021, ev-0024). The questioning was surgical and anomaly-driven: the open-ended walkthrough (ev-0001) exposed the manual workaround/root cause, then ev-0004 isolated whether it was systemic, then ev-0006/ev-0009 chased the existing-API thread the senior hinted at, confirming the production API normalizes the exact bottleneck format (ev-0010/HF-5). The regulatory question (ev-0021) was praised as 'exactly the right question.' This maps cleanly to the 4 anchor: all 4 critical facts surfaced and inconsistencies probed. The only gap from a perfect-confidence exceptional is the lack of explicit re-confrontation of the partner's conflicting 'staffing' narrative, but the candidate had already established the true root cause from the senior, demonstrating implicit detection of the spin."
+      },
+      {
+        "dimension": "D2",
+        "score": 4,
+        "confidence": "high",
+        "evidence": [
+          {
+            "quote": "Root cause is an upstream ERP data-format change ~8 months ago that Clara's reconciliation engine can't parse; it surfaces as generic 'data quality' errors, forcing 45-90 min of manual Excel re-export per upload cycle. Not client slowness and not headcount.",
+            "eventId": "ev-0031"
+          },
+          {
+            "quote": "Not solving general client responsiveness, not adding headcount, not re-platforming Clara. Explicitly out of scope: the EQR reviewer-capacity issue (resourcing, not tooling).",
+            "eventId": "ev-0031"
+          },
+          {
+            "quote": "The existing IT evidence-retrieval API already normalizes the new ERP format (confirmed with IT); methodology documentation can be completed before the 6-week CPAB thematic review.",
+            "eventId": "ev-0031"
+          },
+          {
+            "quote": "Honestly? I think we have a staffing model problem. My seniors are spending too much time chasing evidence",
+            "eventId": "ev-0019"
+          },
+          {
+            "quote": "So the Reopened status isn't really a client responsiveness issue on that one — it's a format mismatch that I've just been handling manually.",
+            "eventId": "ev-0002"
+          }
+        ],
+        "counterEvidence": "The synthesis does not explicitly name the failed-pilot/partner-veto dynamic (HF-1, ev-0016) as a reconciled conflict, though its choice to reuse the existing in-house API rather than a new vendor implicitly answers the partner's vendor-implementation trauma. The undocumented-shadow-AI risk (HF-6, ev-0013) is not addressed, but it sits outside this problem's scope.",
+        "rationale": "The brief at ev-0031 explicitly separates symptom from root cause: it names the ERP data-format change (HF-3, ev-0003/ev-0005) as the true cause and rejects both the 'client responsiveness' framing (senior's correction at ev-0002) and the partner's 'staffing model' framing (ev-0019) as symptoms. It reconciles the central partner-vs-senior conflict, incorporates IT's existing normalization API (HF-5, ev-0010/ev-0011) as a load-bearing, evidence-linked assumption, and anchors the timeline to Risk's 6-week CPAB review (HF-7, ev-0022/ev-0023). The 'notSolving' section makes genuine scoping decisions — deliberately excluding headcount, re-platforming, and, notably, the EQR reviewer-capacity angle (ev-0027) as 'resourcing, not tooling' rather than mistaking it for the problem. Assumptions are explicit and tied to discovered facts. The only gap from a perfect reconciliation is the unstated partner-pilot/veto dynamic (ev-0016/HF-1), but this is largely answered implicitly by choosing an in-house solution. Strong-to-exceptional, evidence-grounded framing warrants a 4."
+      },
+      {
+        "dimension": "D3",
+        "score": 4,
+        "confidence": "high",
+        "evidence": [
+          {
+            "quote": "1 [AGENT] Document Retriever ingests upload. 2 [AGENT] ERP Format Normalizer maps to standard schema. 3 [AGENT] Evidence Classifier flags format/type mismatches. 4 [HUMAN] Senior reviews only flagged exceptions. 5 [AGENT] Audit Trail Logger records all actions. 6 [HUMAN] Partner/EQR sign-off unchanged.",
+            "eventId": "ev-0036"
+          },
+          {
+            "quote": "Agents normalize, classify, and log — never form or sign off an audit conclusion. Every evidence conclusion routes through the Human Approval Gate. Sign-off authority stays with the senior/partner/EQR.",
+            "eventId": "ev-0036"
+          },
+          {
+            "quote": "Phase 0 added — Methodology Documentation & Approval; must complete before any client engagement runs through this workflow. Gated by `human-approval-gate` at two levels; approved record is immutable before CPAB review.",
+            "eventId": "ev-0035"
+          },
+          {
+            "quote": "Data stays within sanctioned infrastructure (the existing API is already security-reviewed).",
+            "eventId": "ev-0036"
+          },
+          {
+            "quote": "New ERP format the API doesn't know (route to manual + flag for API update); over-suppression of real exceptions by the classifier (sample-audit the auto-passed items); silent normalization errors (reconciliation check against source totals).",
+            "eventId": "ev-0036"
+          }
+        ],
+        "counterEvidence": "The saved spec's eval plan and reusable-component fields are truncated in the trace (ev-0036), so the full evaluation rigor isn't fully visible. HF-1 (partner's implicit veto on new vendor integrations) is only addressed implicitly by reusing the existing security-reviewed API rather than being named explicitly as a constraint.",
+        "rationale": "The spec is a multi-phase agentic workflow with explicit [AGENT]/[HUMAN] handoffs and steps a reviewer could hand to engineering (ev-0033, ev-0036). Autonomy boundaries are justified and governance-aware: agents normalize/classify/log but never form or sign conclusions, and all conclusions route through a human approval gate with senior/partner/EQR sign-off preserved (ev-0036). Discovered constraints are traced: the existing normalization API (HF-5) is reused as 'already security-reviewed' rather than building a new vendor integration (ev-0036), and after the boardroom the candidate added a Phase 0 methodology approval gate that makes the procedure immutable before the CPAB review window (HF-7) (ev-0035). Failure modes are concrete and addressed — unknown ERP format, classifier over-suppression, and silent normalization errors each with a mitigation (ev-0036) — and test cases derive from the Senior's real failures (HF-3) (ev-0036). This meets the exceptional anchor: boundaries justified, constraints traced to discovery, and failure modes handled."
+      },
+      {
+        "dimension": "D4",
+        "score": 4,
+        "confidence": "high",
+        "evidence": [
+          {
+            "quote": "Build a workflow that routes incoming client trial-balance uploads through the existing ERP Format Normalizer API, flags mismatches with the Evidence Classifier, and only escalates true exceptions to the senior. Humans sign off all evidence conclusions; log every step.",
+            "eventId": "ev-0032"
+          },
+          {
+            "quote": "Add a methodology-documentation gate before go-live so the procedure is in approved methodology ahead of the CPAB review, and add the audit-trail logger to every agent action.",
+            "eventId": "ev-0034"
+          },
+          {
+            "quote": "format-mismatch-detector: fingerprints an ERP export's shape and routes it to the correct normalizer.",
+            "eventId": "ev-0042"
+          },
+          {
+            "quote": "After David flagged the methodology-approval path, I moved the documentation gate before go-live and added an explicit CPAB-review checkpoint. After Sarah confirmed the API, I dropped the proposed new connector entirely and reused the existing one.",
+            "eventId": "ev-0048"
+          },
+          {
+            "quote": "Phase 0 added — Methodology Documentation & Approval; must complete before any client engagement runs through this workflow.",
+            "eventId": "ev-0035"
+          }
+        ],
+        "counterEvidence": "The build was expressed as workflow specification prose rather than a fully running artifact, and one could argue the contributed component (format-mismatch-detector, ev-0042) is incremental given the reused normalizer; but these are minor relative to the overall execution quality.",
+        "rationale": "The candidate directed the build with specific, scoped instructions (ev-0032) rather than a vague dump, then iterated with a second targeted instruction adding a methodology gate and explicit logging (ev-0034), producing a documented v2 (ev-0035). They deliberately reused 5 existing library components (ev-0037 through ev-0041) instead of rebuilding, and contributed a new component back (ev-0042). Crucially, the build directly leveraged the production normalizer (HF-5) and the post-boardroom revision (ev-0048) shows genuine test-learn-iterate: dropping the new connector after IT confirmed the API (ev-0046) and moving the documentation gate before go-live to address the CPAB risk (ev-0047, HF-7). This is a tight build loop addressing real challenges, meeting the 4 anchor."
+      },
+      {
+        "dimension": "D5",
+        "score": 4,
+        "confidence": "high",
+        "evidence": [
+          {
+            "quote": "Critique this framing: the bottleneck is a data-format mismatch from an ERP change, not client responsiveness. What am I missing before I commit to it?",
+            "eventId": "ev-0029"
+          },
+          {
+            "quote": "Root cause is an upstream ERP data-format change ~8 months ago that Clara's reconciliation engine can't parse... Not client slowness and not headcount.",
+            "eventId": "ev-0031"
+          },
+          {
+            "quote": "Build a workflow that routes incoming client trial-balance uploads through the existing ERP Format Normalizer API, flags mismatches with the Evidence Classifier, and only escalates true exceptions to the senior. Humans sign off all evidence conclusions; log every step.",
+            "eventId": "ev-0032"
+          },
+          {
+            "quote": "failureModes\":\"New ERP format the API doesn't know (route to manual + flag for API update); over-suppression of real exceptions by the classifier (sample-audit the auto-passed items); silent normalization errors (reconciliation check against source totals).",
+            "eventId": "ev-0036"
+          },
+          {
+            "quote": "The real bottleneck isn't slow clients or staffing — it's an ERP format change Clara can't parse... we expose it, classify exceptions, keep humans on every sign-off, and document the procedure in methodology before the CPAB thematic review in six weeks.",
+            "eventId": "ev-0043"
+          }
+        ],
+        "counterEvidence": "Only a single panel query is visible in the trace (ev-0029), so breadth of adversarial AI use is somewhat thin; we don't see multiple iterations of redirecting/rejecting AI output. However, the one query is high-quality and explicitly adversarial, and the build prompts are tightly directed rather than open-ended.",
+        "rationale": "The candidate used the AI panel as an adversarial self-check rather than an answer engine: ev-0029 explicitly asks the panel to critique their own framing and surface blind spots 'before I commit,' which is augmentation, not outsourcing. The panel's critique (ev-0030) was then transformed into an owned synthesis (ev-0031) where the candidate set scope, confirmed the API with IT, and made the root-cause call themselves. Build prompts (ev-0032, ev-0034) are precise, constraint-laden instructions — directing the build agent toward human sign-off gates, methodology documentation, and audit logging — rather than accepting generic output. The resulting spec (ev-0036) shows clear ownership through specific failure modes and an eval plan drawn from real failures. The candidate defended the whole approach unaided across hostile boardroom questioning on timeline, scope, and CPAB risk (ev-0043 through ev-0047), and the audit notes a revision after boardroom — demonstrating decisions were unmistakably theirs. This is sophisticated, owned leverage warranting a 4."
+      },
+      {
+        "dimension": "D6",
+        "score": 4,
+        "confidence": "high",
+        "evidence": [
+          {
+            "quote": "Are there regulatory timelines or upcoming reviews that should shape when and how we deploy anything?",
+            "eventId": "ev-0021"
+          },
+          {
+            "quote": "What would it take to get a tool like this into approved methodology?",
+            "eventId": "ev-0024"
+          },
+          {
+            "quote": "Agents normalize, classify, and log — never form or sign off an audit conclusion. Every evidence conclusion routes through the Human Approval Gate. Sign-off authority stays with the senior/partner/EQR.",
+            "eventId": "ev-0036"
+          },
+          {
+            "quote": "we expose it, classify exceptions, keep humans on every sign-off, and document the procedure in methodology before the CPAB thematic review in six weeks. Low-risk, fast, defensible.",
+            "eventId": "ev-0043"
+          },
+          {
+            "quote": "failureModes\":\"New ERP format the API doesn't know (route to manual + flag for API update); over-suppression of real exceptions by the classifier (sample-audit the auto-passed items); silent normalization errors (reconciliation check against source totals).",
+            "eventId": "ev-0036"
+          }
+        ],
+        "counterEvidence": "The candidate surfaced the unsanctioned shadow-AI usage problem (HF-6, ev-0013) but did not weave a remediation of it into the design — that governance gap was left unaddressed. The proactive CPAB question (ev-0021) was partly prompted by Risk affirming it was 'exactly the right question,' but the candidate asked it unprompted before that affirmation.",
+        "rationale": "Governance functioned as a primary design constraint rather than an afterthought. The candidate proactively probed regulatory timing (ev-0021, surfacing HF-7 CPAB review), the methodology-approval requirements under ISQM 1/CAS (ev-0024), and where sign-offs actually bottleneck (ev-0026). These constraints then shaped the artifact: the spec architects an explicit Audit Trail Logger and Human Approval Gate with autonomy boundaries that bar agents from forming/signing audit conclusions, keeps data within already-security-reviewed sanctioned infrastructure, and documents failure modes with mitigations (ev-0036). The boardroom pitch (ev-0043) explicitly sequences deployment — document in methodology before the 6-week CPAB review — earning Risk's confirmation that this is 'the right sequence' and 'defensible' (ev-0047). This is governance shaping the design and candid residual-risk acknowledgment, meeting the level-4 anchor. Minor gap: the shadow-AI exposure (ev-0013) was surfaced but not addressed in the solution."
+      }
+    ],
+    "audit": {
+      "criticalFactsFound": [
+        "HF-3",
+        "HF-5",
+        "HF-1",
+        "HF-7"
+      ],
+      "usefulFactsFound": [
+        "HF-4",
+        "HF-6",
+        "HF-2",
+        "HF-8"
+      ],
+      "questionsUsed": 10,
+      "questionsPerPersona": {
+        "partner": 2,
+        "senior": 3,
+        "it": 2,
+        "risk": 3
+      },
+      "componentsReused": 5,
+      "revisedAfterBoardroom": true
+    },
+    "gateTriggered": null,
+    "weightedTotal": 4,
+    "profile": "senior-consultant"
+  },
+  "isSample": true
+}
